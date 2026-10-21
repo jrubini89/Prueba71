@@ -758,7 +758,7 @@
                             <i class="fa-solid fa-file-arrow-down text-2xl"></i>
                         </div>
                         <h4 class="font-bebas text-3xl text-hueso tracking-wider">DESCARGAR LEGAJO CV (PDF)</h4>
-                        <p class="text-sm text-cromo font-sans">Obtené la versión resumida para imprimir de mi trayectoria en UX Research, Accenture, Mercado Libre y QA Automation.</p>
+                        <p class="text-sm text-cromo font-sans">Obtené la versión resumida para imprimir de mi trayectoria.</p>
                         <button onclick="downloadResume()" class="bg-carrera hover:bg-hueso text-asfalto font-mono text-xs px-6 py-3 rounded transition font-bold uppercase inline-flex items-center gap-2">
                             <i class="fa-solid fa-download"></i> DESCARGAR CURRICULUM VITAE
                         </button>
@@ -935,7 +935,16 @@
 
         // Resume download simulation
         function downloadResume() {
-            showNotification("Descargando Legajo CV de Julia Rubini (PDF)...");
+            const pdfUrl = 'CV - UX Julia Rubini.pdf'; 
+            
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'CV - UX Julia Rubini.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            showNotification("¡Descargando Legajo CV de Julia Rubini (PDF)!");
         }
 
         // Notification Box
