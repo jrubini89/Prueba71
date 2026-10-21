@@ -19,38 +19,37 @@
 
     body, html {
       width: 100%;
-      height: 100%;
-      overflow: hidden;
+      min-height: 100%;
       background-color: #121212;
       font-family: 'Space Mono', monospace;
       color: #F3ECDD;
     }
 
-    /* Contenedor principal con la ilustración de fondo */
+    /* Contenedor principal adaptable */
     .workshop-hero {
       position: relative;
-      width: 100vw;
-      height: 100vh;
-      /* Asegúrate de nombrar tu imagen como taller.jpg y ponerla en la misma carpeta que index.html */
-      background: url('taller.jpg') no-repeat center center;
+      width: 100%;
+      min-height: 100vh;
+      background: url('taller.jpg') no-repeat center top;
       background-size: cover;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 20px;
     }
 
-    /* Barra superior de navegación / Botonera de taller */
+    /* Botonera superior */
     .top-nav {
       width: 100%;
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      flex-wrap: wrap;
       gap: 10px;
-      padding: 24px 40px;
       z-index: 10;
     }
 
-    /* Botones estilo chapa/taller vintage */
+    /* Botones estilo garage */
     .btn-garage {
       background-color: #cfd8c7;
       color: #1c2619;
@@ -63,6 +62,7 @@
       box-shadow: 2px 2px 0px #121212;
       transition: all 0.15s ease-in-out;
       cursor: pointer;
+      text-align: center;
     }
 
     .btn-garage:hover {
@@ -77,71 +77,80 @@
       box-shadow: 0px 0px 0px #121212;
     }
 
-    /* Botón destacado CV */
     .btn-garage.cv-btn {
       background-color: #ffd100;
       color: #121212;
     }
 
-    .btn-garage.cv-btn:hover {
-      background-color: #d62828;
-      color: #F3ECDD;
-    }
-
-    /* Área inferior de texto de bienvenida */
+    /* Contenedor de texto inferior */
     .hero-content {
-      position: absolute;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%);
       text-align: center;
       width: 100%;
       max-width: 900px;
-      padding: 0 20px;
-      pointer-events: none;
+      margin: 40px auto 20px auto;
+      padding: 16px 20px;
+      background: rgba(18, 18, 18, 0.65); /* Fondo oscuro semitransparente para legibilidad */
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
     }
 
     .hero-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(60px, 9vw, 110px);
-      line-height: 0.95;
+      font-size: clamp(48px, 9vw, 100px);
+      line-height: 1;
       letter-spacing: 0.05em;
       color: #F3ECDD;
-      text-shadow: 4px 4px 0px #121212, 0 0 20px rgba(0,0,0,0.8);
+      text-shadow: 3px 3px 0px #121212;
       margin-bottom: 8px;
     }
 
     .hero-subtitle {
-      font-size: clamp(12px, 1.3vw, 16px);
+      font-size: clamp(12px, 3.2vw, 16px);
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #F3ECDD;
-      text-shadow: 2px 2px 4px #121212;
       margin-bottom: 6px;
+      line-height: 1.4;
     }
 
     .hero-tagline {
-      font-size: clamp(11px, 1.1vw, 14px);
-      letter-spacing: 0.15em;
+      font-size: clamp(11px, 2.8vw, 14px);
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #ffd100;
-      text-shadow: 2px 2px 4px #121212;
     }
 
-    /* Adaptabilidad básica */
-    @media (max-width: 860px) {
-      .top-nav {
-        flex-wrap: wrap;
-        justify-content: center;
+    /* Ajustes específicos para pantallas de celular (menos de 768px) */
+    @media (max-width: 768px) {
+      .workshop-hero {
+        background-size: cover;
+        background-position: 35% center; /* Centra el personaje y el auto en pantallas verticales */
+        justify-content: flex-start;
+        gap: 30px;
         padding: 16px;
       }
-      .btn-garage {
-        font-size: 16px;
-        padding: 5px 10px;
+
+      .top-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas de botones en celular */
+        gap: 8px;
+        width: 100%;
       }
+
+      .btn-garage {
+        font-size: 17px;
+        padding: 8px 6px;
+      }
+
+      .btn-garage.cv-btn {
+        grid-column: span 2; /* El botón de CV ocupa todo el ancho */
+      }
+
       .hero-content {
-        bottom: 40px;
+        margin-top: auto; /* Empuja el texto hacia abajo de forma orgánica sin desbordar */
+        margin-bottom: 16px;
+        padding: 14px;
       }
     }
   </style>
