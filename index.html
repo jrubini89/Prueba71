@@ -145,12 +145,10 @@
         </div>
     </header>
 
-    <!-- Main Content Container (Single Page Landing) -->
+    <!-- Main Content Container -->
     <main class="flex-grow max-w-7xl mx-auto w-full p-4 sm:p-8 space-y-24">
 
-        <!-- ========================================== -->
-        <!-- SECTION 1: HERO & INTRODUCING JULIA        -->
-        <!-- ========================================== -->
+        <!-- SECTION 1: HERO -->
         <section id="hero" class="pt-8 sm:pt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 space-y-6">
                 <div class="inline-flex items-center gap-2 bg-falcon/20 border border-falcon text-falcon font-mono text-xs px-3 py-1 rounded">
@@ -161,8 +159,7 @@
                 </h2>
                 <p class="text-base sm:text-lg text-cromo font-sans leading-relaxed">
                     Diseño experiencias digitales claras y útiles. Pasá y te cuento un poco sobre mí:
-                  
-                  Egresé de una técnica en mecánica y pasé por la Facultad de Diseño Industrial. Ahí descubrí que me gusta que las cosas funcionen y se vean bien. Hoy lo hago con experiencias digitales.
+                    Egresé de una técnica en mecánica y pasé por la Facultad de Diseño Industrial. Ahí descubrí que me gusta que las cosas funcionen y se vean bien. Hoy lo hago con experiencias digitales.
                 </p>
                 <p class="text-sm sm:text-base text-hueso font-sans leading-relaxed bg-asfaltoCard border-l-4 border-carrera p-4 rounded-r">
                     Lo mío es que lo complejo se sienta simple: pruebo, ajusto y vuelvo a probar, como en un taller. Por eso mi portfolio es uno. Entre prueba y prueba: buena música, autos clásicos y mate.
@@ -212,10 +209,7 @@
             </div>
         </section>
 
-
-        <!-- ========================================== -->
-        <!-- SECTION 2: CASOS DE ESTUDIO / WORK ORDERS  -->
-        <!-- ========================================== -->
+        <!-- SECTION 2: CASOS DE ESTUDIO -->
         <section id="casos" class="space-y-10 scroll-mt-24">
             <div class="border-b border-asfaltoLight pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
@@ -338,10 +332,7 @@
             </div>
         </section>
 
-
-<!-- ========================================== -->
         <!-- SECTION 3: FICHA TÉCNICA & CARRUSEL (SOBRE MÍ) -->
-        <!-- ========================================== -->
         <section id="experiencia" class="space-y-12 scroll-mt-24">
             <div class="border-b border-asfaltoLight pb-6">
                 <div class="flex items-center gap-2 text-falcon font-mono text-xs uppercase mb-1">
@@ -376,40 +367,39 @@
                             <p><strong>Cable a tierra:</strong> ruta en mi clásico del 71</p>
                         </div>
 
-<!-- PHOTO CAROUSEL INSIDE THE CLIPBOARD -->
-<div class="pt-4 border-t-2 border-stone-300 space-y-3">
-    <div class="relative w-full h-64 rounded bg-stone-900 overflow-hidden shadow-inner group">
-        <!-- Slides -->
-        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-100">
-            <img src="CARRU4.jpg" alt="Julia Rubini" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/FFD100?text=Julia+Rubini'">
-        </div>
-        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0">
-            <img src="CARRU1.jpg" alt="Julia Rubini" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/FFD100?text=Julia+Rubini'">
-        </div>
-        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0">
-            <img src="CARRU3.jpeg" alt="Ford Falcon Clásico" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/3E5C3A?text=Ford+Falcon+71'">
-        </div>
-        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0">
-            <img src="CARRU2.jpeg" alt="Ruta al atardecer" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/D62828?text=Ruta+Ruta+71'">
-        </div>
+                        <!-- PHOTO CAROUSEL INSIDE THE CLIPBOARD -->
+                        <div class="pt-4 border-t-2 border-stone-300 space-y-3">
+                            <div class="relative w-full h-64 rounded bg-stone-900 overflow-hidden shadow-inner group">
+                                <!-- Slides -->
+                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-100" style="opacity: 1; z-index: 10; pointer-events: auto;">
+                                    <img src="CARRU4.jpg" alt="Julia Rubini" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/FFD100?text=Julia+Rubini'">
+                                </div>
+                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" style="opacity: 0; z-index: 1; pointer-events: none;">
+                                    <img src="CARRU1.jpg" alt="Julia Rubini" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/FFD100?text=Julia+Rubini'">
+                                </div>
+                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" style="opacity: 0; z-index: 1; pointer-events: none;">
+                                    <img src="CARRU3.jpeg" alt="Ford Falcon Clásico" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/3E5C3A?text=Ford+Falcon+71'">
+                                </div>
+                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" style="opacity: 0; z-index: 1; pointer-events: none;">
+                                    <img src="CARRU2.jpeg" alt="Ruta al atardecer" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/D62828?text=Ruta+Ruta+71'">
+                                </div>
 
-        <!-- Carousel Controls (Visibles y con estilo sólido) -->
-        <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/80 hover:bg-carrera hover:text-asfalto text-white w-9 h-9 flex items-center justify-center rounded-full text-xs transition shadow-lg cursor-pointer z-20 border border-white/30">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/80 hover:bg-carrera hover:text-asfalto text-white w-9 h-9 flex items-center justify-center rounded-full text-xs transition shadow-lg cursor-pointer z-20 border border-white/30">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
+                                <!-- Carousel Controls -->
+                                <button type="button" onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/80 hover:bg-carrera hover:text-asfalto text-white w-9 h-9 flex items-center justify-center rounded-full text-xs transition shadow-lg cursor-pointer z-20 border border-white/30">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <button type="button" onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/80 hover:bg-carrera hover:text-asfalto text-white w-9 h-9 flex items-center justify-center rounded-full text-xs transition shadow-lg cursor-pointer z-20 border border-white/30">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
 
-        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 rounded text-[10px] text-carrera font-mono tracking-wider z-20 border border-white/20">
-            <span id="slide-indicator">1 / 4</span> • Archivo
-        </div>
-    </div>
-</div>
+                                <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 rounded text-[10px] text-carrera font-mono tracking-wider z-20 border border-white/20">
+                                    <span id="slide-indicator">1 / 4</span> • Archivo
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
-                <!-- Cierre correcto de la columna izquierda -->
 
                 <!-- Right Column: Experience Timeline & Toolbox -->
                 <div class="lg:col-span-6 space-y-8">
@@ -460,214 +450,160 @@
 
             </div>
         </section>
-<!-- ========================================== -->
-<!-- SECCIÓN: CINTA EN MOVIMIENTO - DISEÑO GRÁFICO & PROTOTIPOS -->
-<!-- ========================================== -->
-<section class="py-16 overflow-hidden bg-asfaltoCard border-y-2 border-carrera/20 relative">
-    <!-- Encabezado de la sección -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 mb-8 text-center">
-        <span class="text-carrera font-mono text-xs uppercase tracking-widest block mb-1">// LABORATORIO VISUAL & TALLER DE PINTURA</span>
-        <h3 class="font-bebas text-3xl sm:text-5xl text-hueso tracking-wider">BRANDING DE MARCA Y REDES</h3>
 
-    <!-- Contenedor con leve rotación diagonal -->
-    <div class="transform -rotate-2 scale-105 py-4 bg-asfalto/50 border-y border-carrera/30">
+        <!-- SECTION: CINTA EN MOVIMIENTO -->
+        <section class="py-16 overflow-hidden bg-asfaltoCard border-y-2 border-carrera/20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8 mb-8 text-center">
+                <span class="text-carrera font-mono text-xs uppercase tracking-widest block mb-1">// LABORATORIO VISUAL & TALLER DE PINTURA</span>
+                <h3 class="font-bebas text-3xl sm:text-5xl text-hueso tracking-wider">BRANDING DE MARCA Y REDES</h3>
+            </div>
+
+            <div class="transform -rotate-2 scale-105 py-4 bg-asfalto/50 border-y border-carrera/30">
+                <div class="flex w-max animate-marquee space-x-6 hover:[animation-play-state:paused]">
+                    <!-- Grupo 1 -->
+                    <div class="flex space-x-6 shrink-0">
+                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
+                            <img src="BRANDING 4.png" alt="Branding Alqo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-carrera font-bold">BRANDING // IDENTIDAD VISUAL</span>
+                            </div>
+                        </div>
+                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105">
+                            <img src="BRANDING 5.png" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-falcon font-bold">UI/UX // FIGMA PROTOTYPE</span>
+                            </div>
+                        </div>
+                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105">
+                            <img src="BRANDING 1.png" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-pits font-bold">Adobe Illustrator</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide">Árboles de Autogestión LATAM</h4>
+                            </div>
+                        </div>
+                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
+                            <img src="BRANDING 2.png" alt="Ilustración Vectorial" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-carrera font-bold">ILUSTRACIÓN // VECTORIAL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grupo 2 (Duplicado) -->
+                    <div class="flex space-x-6 shrink-0" aria-hidden="true">
+                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
+                            <img src="BRANDING 3.png" alt="Branding Taller" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-carrera font-bold">BRANDING // IDENTIDAD VISUAL</span>
+                            </div>
+                        </div>
+                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=600" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-falcon font-bold">UI/UX // FIGMA PROTOTYPE</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide">Flujos Complejos & Wireflows</h4>
+                            </div>
+                        </div>
+                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-pits font-bold">BOTMAKER // GEN AI & MCP</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide">Árboles de Autogestión LATAM</h4>
+                            </div>
+                        </div>
+                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
+                            <img src="BRANDING 5.png" alt="Ilustración Vectorial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-carrera font-bold">ILUSTRACIÓN // VECTORIAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            @keyframes marquee {
+                0% { transform: translateX(0%); }
+                100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+                display: flex;
+                width: max-content;
+                animation: marquee 25s linear infinite;
+            }
+        </style>
         
-        <!-- Marquee Track (Carrusel infinito automático) -->
-        <div class="flex w-max animate-marquee space-x-6 hover:[animation-play-state:paused]">
-            
-            <!-- GRUPO 1 DE TARJETAS -->
-            <div class="flex space-x-6 shrink-0">
-                
-                <!-- Item 1: Diseño Gráfico / Branding -->
-                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
-                    <img src="BRANDING 4.png" alt="Branding Alqo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-[10px] font-mono text-carrera font-bold">BRANDING // IDENTIDAD VISUAL</span>
-                    </div>
-                </div>
-
-                <!-- Item 2: Prototipo Figma / UI -->
-                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105">
-                    <img src="BRANDING 5.png" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-[10px] font-mono text-falcon font-bold">UI/UX // FIGMA PROTOTYPE</span>
-                    </div>
-                </div>
-
-                <!-- Item 3: Diseño Gráfico / Empresas -->
-                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105">
-                    <img src="BRANDING 1.png" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-[10px] font-mono text-pits font-bold">Adobe Illustrator</span>
-                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Árboles de Autogestión LATAM</h4>
-                    </div>
-                </div>
-
-                <!-- Item 4: Manual de Marca -->
-                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
-                    <img src="BRANDING 2.png" alt="Ilustración Vectorial" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-[10px] font-mono text-carrera font-bold">ILUSTRACIÓN // VECTORIAL</span>
-                    </div>
-                </div>
-
+        <!-- SECTION: BANCO DE PROTOTIPOS & MOCKUPS MÓVILES -->
+        <section class="py-20 max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
+            <div class="text-center space-y-3 max-w-3xl mx-auto">
+                <span class="text-carrera font-mono text-xs uppercase tracking-widest block">// BANCO DE PRUEBAS • PROTOTIPOS EN VIVO</span>
+                <h3 class="font-bebas text-4xl sm:text-6xl text-hueso tracking-wider">UI MOTION/DISEÑO MOBILE</h3>
             </div>
 
-            <!-- GRUPO 2 (Duplicado exacto para lograr el loop infinito perfecto sin saltos) -->
-            <div class="flex space-x-6 shrink-0" aria-hidden="true">
-                
-                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
-                    <img src="BRANDING 3.png" alt="Branding Taller" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-[10px] font-mono text-carrera font-bold">BRANDING // IDENTIDAD VISUAL</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center pt-8">
+                <!-- Mockup 1 -->
+                <div class="flex flex-col items-center space-y-6 group">
+                    <div class="text-center">
+                        <span class="font-mono text-xs text-carrera bg-asfaltoCard px-3 py-1 rounded border border-carrera/30">MÓDULO 01 // MOTION UI</span>
+                    </div>
+                    <div class="relative w-[280px] h-[560px] bg-asfaltoCard border-4 border-zinc-700 rounded-[40px] p-3 shadow-2xl shadow-carrera/10 transition-all duration-500 group-hover:-translate-y-3 group-hover:rotate-1 group-hover:border-carrera">
+                        <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20"></div>
+                        <div class="w-full h-full bg-asfalto rounded-[30px] overflow-hidden relative border border-zinc-800 flex items-center justify-center">
+                            <img src="GIF MCDONALDS.gif" alt="Prototipo McDonald's" class="w-full h-full object-contain bg-black group-hover:scale-105 transition duration-700" onerror="this.src='https://placehold.co/300x600/121212/FFD100?text=GIF+McDonalds'">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-asfalto via-asfalto/80 to-transparent p-4 text-center pointer-events-none">
+                                <span class="font-mono text-[10px] text-cromo">Figma Prototype • 60 FPS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center max-w-xs space-y-1">
+                        <h4 class="font-bebas text-2xl text-hueso">Mc Donald's App</h4>
+                        <p class="text-xs text-cromo font-sans">Motion UI para el re-diseño de la App de McDonald's</p>
                     </div>
                 </div>
 
-                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=600" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-[10px] font-mono text-falcon font-bold">UI/UX // FIGMA PROTOTYPE</span>
-                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Flujos Complejos & Wireflows</h4>
+                <!-- Mockup 2 -->
+                <div class="flex flex-col items-center space-y-6 group">
+                    <div class="text-center">
+                        <span class="font-mono text-xs text-falcon bg-asfaltoCard px-3 py-1 rounded border border-falcon/30">MÓDULO 02 // CONVERSACIONAL</span>
+                    </div>
+                    <div class="relative w-[280px] h-[560px] bg-asfaltoCard border-4 border-zinc-700 rounded-[40px] p-3 shadow-2xl shadow-falcon/10 transition-all duration-500 group-hover:-translate-y-3 group-hover:-rotate-1 group-hover:border-falcon">
+                        <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20"></div>
+                        <div class="w-full h-full bg-asfalto rounded-[30px] overflow-hidden relative border border-zinc-800 flex items-center justify-center">
+                            <img src="GIFCHATBOT.gif" alt="Prototipo Chatbot" class="w-full h-full object-contain bg-black group-hover:scale-105 transition duration-700" onerror="this.src='https://placehold.co/300x600/121212/3E5C3A?text=GIF+Chatbot'">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-asfalto via-asfalto/80 to-transparent p-4 text-center pointer-events-none">
+                                <span class="font-mono text-[10px] text-cromo">Prototype • Micro-interactions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center max-w-xs space-y-1">
+                        <h4 class="font-bebas text-2xl text-hueso">Asistente de Autogestión</h4>
+                        <p class="text-xs text-cromo font-sans">Flujo conversacional con Chatbots</p>
                     </div>
                 </div>
 
-                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-[10px] font-mono text-pits font-bold">BOTMAKER // GEN AI & MCP</span>
-                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Árboles de Autogestión LATAM</h4>
+                <!-- Mockup 3 -->
+                <div class="flex flex-col items-center space-y-6 group">
+                    <div class="text-center">
+                        <span class="font-mono text-xs text-pits bg-asfaltoCard px-3 py-1 rounded border border-pits/30">MÓDULO 03 // BRANDING</span>
+                    </div>
+                    <div class="relative w-[280px] h-[560px] bg-asfaltoCard border-4 border-zinc-700 rounded-[40px] p-3 shadow-2xl shadow-pits/10 transition-all duration-500 group-hover:-translate-y-3 group-hover:rotate-1 group-hover:border-pits">
+                        <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20"></div>
+                        <div class="w-full h-full bg-asfalto rounded-[30px] overflow-hidden relative border border-zinc-800 flex items-center justify-center">
+                            <img src="Alqo-captura" alt="Prototipo Alqo" class="w-full h-full object-contain bg-black group-hover:scale-105 transition duration-700" onerror="this.src='https://placehold.co/300x600/121212/D62828?text=Alqo+Captura'">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-asfalto via-asfalto/80 to-transparent p-4 text-center pointer-events-none">
+                                <span class="font-mono text-[10px] text-cromo">Branding & Social Media</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center max-w-xs space-y-1">
+                        <h4 class="font-bebas text-2xl text-hueso">Redes Sociales</h4>
+                        <p class="text-xs text-cromo font-sans">Comunicación y diseño visual de la marca</p>
                     </div>
                 </div>
-
-                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
-                    <img src="BRANDING 5" alt="Ilustración Vectorial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                        <span class="text-[10px] font-mono text-carrera font-bold">ILUSTRACIÓN // VECTORIAL</span>
-                    </div>
-                </div>
-
             </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ========================================== -->
-<!-- ESTILOS CSS PARA LA ANIMACIÓN CONTINUA     -->
-<!-- ========================================== -->
-<style>
-    @keyframes marquee {
-        0% { transform: translateX(0%); }
-        100% { transform: translateX(-50%); }
-    }
-
-    .animate-marquee {
-        display: flex;
-        width: max-content;
-        animation: marquee 25s linear infinite;
-    }
-</style>
+        </section>
         
-<!-- ========================================== -->
-<!-- SECCIÓN: BANCO DE PROTOTIPOS & MOCKUPS MÓVILES -->
-<!-- ========================================== -->
-<section class="py-20 max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
-    
-    <!-- Encabezado de sección -->
-    <div class="text-center space-y-3 max-w-3xl mx-auto">
-        <span class="text-carrera font-mono text-xs uppercase tracking-widest block">// BANCO DE PRUEBAS • PROTOTIPOS EN VIVO</span>
-        <h3 class="font-bebas text-4xl sm:text-6xl text-hueso tracking-wider">UI MOTION/DISEÑO MOBILE</h3>
-    </div>
-
-    <!-- Grilla de Mockups de Celulares (3 unidades) -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center pt-8">
-        
-        <!-- MOCKUP 1: Motion UI -->
-        <div class="flex flex-col items-center space-y-6 group">
-            <div class="text-center">
-                <span class="font-mono text-xs text-carrera bg-asfaltoCard px-3 py-1 rounded border border-carrera/30">MÓDULO 01 // MOTION UI</span>
-            </div>
-            
-            <!-- Contenedor del Celular con efecto 3D Hover -->
-            <div class="relative w-[280px] h-[560px] bg-asfaltoCard border-4 border-zinc-700 rounded-[40px] p-3 shadow-2xl shadow-carrera/10 transition-all duration-500 group-hover:-translate-y-3 group-hover:rotate-1 group-hover:border-carrera">
-                <!-- Isla dinámica / Cámara frontal -->
-                <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20"></div>
-                
-                <!-- Pantalla del Celular con centrado perfecto -->
-                <div class="w-full h-full bg-asfalto rounded-[30px] overflow-hidden relative border border-zinc-800 flex items-center justify-center">
-                    <img src="GIF MCDONALDS.gif" alt="Prototipo McDonald's" class="w-full h-full object-contain bg-black group-hover:scale-105 transition duration-700" onerror="this.src='https://placehold.co/300x600/121212/FFD100?text=GIF+McDonalds'">
-                    
-                    <!-- Overlay de estado -->
-                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-asfalto via-asfalto/80 to-transparent p-4 text-center pointer-events-none">
-                        <span class="font-mono text-[10px] text-cromo">Figma Prototype • 60 FPS</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center max-w-xs space-y-1">
-                <h4 class="font-bebas text-2xl text-hueso">Mc Donald's App</h4>
-                <p class="text-xs text-cromo font-sans">Motion UI para el re-diseño de la App de McDonald's</p>
-            </div>
-        </div>
-
-        <!-- MOCKUP 2: ChatBOT Conversacional -->
-        <div class="flex flex-col items-center space-y-6 group">
-            <div class="text-center">
-                <span class="font-mono text-xs text-falcon bg-asfaltoCard px-3 py-1 rounded border border-falcon/30">MÓDULO 02 // CONVERSACIONAL</span>
-            </div>
-            
-            <!-- Contenedor del Celular con efecto 3D Hover -->
-            <div class="relative w-[280px] h-[560px] bg-asfaltoCard border-4 border-zinc-700 rounded-[40px] p-3 shadow-2xl shadow-falcon/10 transition-all duration-500 group-hover:-translate-y-3 group-hover:-rotate-1 group-hover:border-falcon">
-                <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20"></div>
-                
-                <!-- Pantalla del Celular con centrado perfecto -->
-                <div class="w-full h-full bg-asfalto rounded-[30px] overflow-hidden relative border border-zinc-800 flex items-center justify-center">
-                    <img src="GIFCHATBOT.gif" alt="Prototipo Chatbot" class="w-full h-full object-contain bg-black group-hover:scale-105 transition duration-700" onerror="this.src='https://placehold.co/300x600/121212/3E5C3A?text=GIF+Chatbot'">
-                    
-                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-asfalto via-asfalto/80 to-transparent p-4 text-center pointer-events-none">
-                        <span class="font-mono text-[10px] text-cromo">Prototype • Micro-interactions</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center max-w-xs space-y-1">
-                <h4 class="font-bebas text-2xl text-hueso">Asistente de Autogestión</h4>
-                <p class="text-xs text-cromo font-sans">Flujo conversacional con Chatbots</p>
-            </div>
-        </div>
-
-        <!-- MOCKUP 3: Alqo - Redes Sociales -->
-        <div class="flex flex-col items-center space-y-6 group">
-            <div class="text-center">
-                <span class="font-mono text-xs text-pits bg-asfaltoCard px-3 py-1 rounded border border-pits/30">MÓDULO 03 // BRANDING</span>
-            </div>
-            
-            <!-- Contenedor del Celular con efecto 3D Hover -->
-            <div class="relative w-[280px] h-[560px] bg-asfaltoCard border-4 border-zinc-700 rounded-[40px] p-3 shadow-2xl shadow-pits/10 transition-all duration-500 group-hover:-translate-y-3 group-hover:rotate-1 group-hover:border-pits">
-                <div class="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20"></div>
-                
-                <!-- Pantalla del Celular con centrado perfecto -->
-                <div class="w-full h-full bg-asfalto rounded-[30px] overflow-hidden relative border border-zinc-800 flex items-center justify-center">
-                    <img src="Alqo-captura" alt="Prototipo Alqo" class="w-full h-full object-contain bg-black group-hover:scale-105 transition duration-700" onerror="this.src='https://placehold.co/300x600/121212/D62828?text=Alqo+Captura'">
-                    
-                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-asfalto via-asfalto/80 to-transparent p-4 text-center pointer-events-none">
-                        <span class="font-mono text-[10px] text-cromo">Branding & Social Media</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center max-w-xs space-y-1">
-                <h4 class="font-bebas text-2xl text-hueso">Redes Sociales</h4>
-                <p class="text-xs text-cromo font-sans">Comunicación y diseño visual de la marca</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-        
-        <!-- ========================================== -->
-        <!-- SECTION 4: CONTACTO & RECEPCIÓN            -->
-        <!-- ========================================== -->
+        <!-- SECTION 4: CONTACTO -->
         <section id="contacto" class="space-y-12 scroll-mt-24">
             <div class="border-b border-asfaltoLight pb-6">
                 <div class="flex items-center gap-2 text-carrera font-mono text-xs uppercase mb-1">
@@ -687,38 +623,38 @@
                         <span class="font-mono text-xs text-carrera bg-asfaltoLight px-2.5 py-1 rounded">FORMULARIO #79</span>
                     </div>
 
-<form id="contact-form" action="https://formspree.io/f/mbgdnpqw" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-4">
-    <div>
-        <label class="block font-mono text-xs text-cromo uppercase mb-1">Nombre / Empresa *</label>
-        <input type="text" name="nombre" id="client-name" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Ej. Juan Pérez (Startup Tech)">
-    </div>
+                    <form id="contact-form" action="https://formspree.io/f/mbgdnpqw" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Nombre / Empresa *</label>
+                            <input type="text" name="nombre" id="client-name" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Ej. Juan Pérez (Startup Tech)">
+                        </div>
 
-    <div>
-        <label class="block font-mono text-xs text-cromo uppercase mb-1">Correo Electrónico *</label>
-        <input type="email" name="email" id="client-email" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="ejemplo@email.com">
-    </div>
+                        <div>
+                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Correo Electrónico *</label>
+                            <input type="email" name="email" id="client-email" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="ejemplo@email.com">
+                        </div>
 
-    <div>
-        <label class="block font-mono text-xs text-cromo uppercase mb-1">Tipo de Servicio *</label>
-        <select name="servicio" id="service-type" class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans">
-            <option value="Contacto con el taller">Contacto con el taller</option>
-            <option value="Coordinar meet">Coordinar una meet para conocernos</option>
-            <option value="Enviar consulta">Enviar solo una consulta</option>
-        </select>
-    </div>
+                        <div>
+                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Tipo de Servicio *</label>
+                            <select name="servicio" id="service-type" class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans">
+                                <option value="Contacto con el taller">Contacto con el taller</option>
+                                <option value="Coordinar meet">Coordinar una meet para conocernos</option>
+                                <option value="Enviar consulta">Enviar solo una consulta</option>
+                            </select>
+                        </div>
 
-    <div>
-        <label class="block font-mono text-xs text-cromo uppercase mb-1">Detalles *</label>
-        <textarea name="mensaje" id="client-message" rows="4" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Describí brevemente qué objetivo querés lograr..."></textarea>
-    </div>
+                        <div>
+                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Detalles *</label>
+                            <textarea name="mensaje" id="client-message" rows="4" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Describí brevemente qué objetivo querés lograr..."></textarea>
+                        </div>
 
-    <button type="submit" id="submit-btn" class="w-full bg-carrera hover:bg-hueso text-asfalto font-bebas text-2xl py-3.5 rounded transition uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
-        <i class="fa-solid fa-paper-plane"></i> ENVIAR ORDEN A TALLER
-    </button>
-</form>
+                        <button type="submit" id="submit-btn" class="w-full bg-carrera hover:bg-hueso text-asfalto font-bebas text-2xl py-3.5 rounded transition uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> ENVIAR ORDEN A TALLER
+                        </button>
+                    </form>
                 </div>
 
-                <!-- Contact Info & Resume Download -->
+                <!-- Contact Info -->
                 <div class="lg:col-span-5 space-y-8">
                     <div class="bg-asfaltoCard border-2 border-asfaltoLight rounded-xl p-6 sm:p-8 space-y-6">
                         <h3 class="font-bebas text-3xl text-hueso border-b border-asfaltoLight pb-3 tracking-wider">COORDENADAS DIRECTAS</h3>
@@ -769,10 +705,9 @@
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer Checkered & Copyright -->
+    <!-- Footer -->
     <footer class="bg-asfalto border-t border-asfaltoLight mt-24 py-8 px-4 text-center space-y-4">
         <div class="w-full h-3 checkered-border mb-6"></div>
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 font-mono text-xs text-cromo">
@@ -788,39 +723,30 @@
         </div>
     </footer>
 
-
-    <!-- ========================================== -->
-    <!-- CASE STUDY MODAL                           -->
-    <!-- ========================================== -->
+    <!-- CASE STUDY MODAL -->
     <div id="case-modal" class="fixed inset-0 bg-asfalto/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-asfaltoCard border-2 border-carrera rounded-xl max-w-2xl w-full p-6 sm:p-8 space-y-6 relative shadow-2xl">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-cromo hover:text-carrera text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            
             <div class="flex items-center gap-2 text-carrera font-mono text-xs uppercase">
                 <i class="fa-solid fa-wrench"></i> INFORME TÉCNICO DETALLADO
             </div>
-            
             <h3 id="modal-title" class="font-bebas text-3xl sm:text-4xl text-hueso tracking-wide">Título del Proyecto</h3>
-            
             <div class="space-y-4 text-sm font-sans text-cromo">
                 <div>
                     <h4 class="font-mono text-xs text-carrera uppercase mb-1">// Diagnóstico & Solución Aplicada</h4>
                     <p id="modal-desc" class="text-hueso text-base">Descripción detallada...</p>
                 </div>
-                
                 <div>
                     <h4 class="font-mono text-xs text-falcon uppercase mb-1">// Herramientas & Stack en Banco</h4>
                     <p id="modal-tools" class="font-mono text-xs bg-asfalto p-3 rounded border border-asfaltoLight text-hueso">Herramientas...</p>
                 </div>
-
                 <div>
                     <h4 class="font-mono text-xs text-pits uppercase mb-1">// Resultados en Pista</h4>
                     <p id="modal-results" class="font-mono text-xs bg-asfalto p-3 rounded border border-asfaltoLight text-carrera font-bold">Resultados...</p>
                 </div>
             </div>
-
             <div class="pt-4 border-t border-asfaltoLight flex justify-end">
                 <button onclick="closeModal()" class="bg-carrera hover:bg-hueso text-asfalto font-mono text-xs px-6 py-2.5 rounded font-bold uppercase transition">
                     CERRAR INFORME
@@ -829,10 +755,7 @@
         </div>
     </div>
 
-
-    <!-- ========================================== -->
-    <!-- CUSTOM NOTIFICATION BOX                    -->
-    <!-- ========================================== -->
+    <!-- NOTIFICATION BOX -->
     <div id="msg-box" class="fixed bottom-6 right-6 bg-asfaltoCard border-2 border-carrera text-hueso p-4 rounded-xl shadow-2xl z-50 hidden max-w-sm flex items-center gap-4">
         <div class="bg-carrera text-asfalto p-3 rounded-full text-xl">
             <i class="fa-solid fa-check"></i>
@@ -843,10 +766,7 @@
         </div>
     </div>
 
-
-    <!-- ========================================== -->
-    <!-- JAVASCRIPT LOGIC                           -->
-    <!-- ========================================== -->
+    <!-- JAVASCRIPT LOGIC CORREGIDA -->
     <script>
         // Toggle Mobile Menu
         function toggleMobileMenu() {
@@ -860,215 +780,5 @@
             }
         }
 
-        // Filter Projects in Landing
+        // Filter Projects
         function filterProjects(category) {
-            const cards = document.querySelectorAll('.project-card');
-            const tabs = document.querySelectorAll('.filter-tab');
-
-            tabs.forEach(tab => {
-                tab.classList.remove('bg-carrera', 'text-asfalto', 'font-bold');
-                tab.classList.add('bg-asfaltoLight', 'text-hueso');
-            });
-
-            const activeTab = document.getElementById('btn-' + category);
-            if (activeTab) {
-                activeTab.classList.remove('bg-asfaltoLight', 'text-hueso');
-                activeTab.classList.add('bg-carrera', 'text-asfalto', 'font-bold');
-            }
-
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Modal Management
-        function openModal(title, desc, tools, results) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('modal-tools').innerText = tools;
-            document.getElementById('modal-results').innerText = results;
-            document.getElementById('case-modal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('case-modal').classList.add('hidden');
-        }
-
-        // Photo Carousel Logic
-(function() {
-    let currentSlide = 0;
-
-    function updateCarousel() {
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicator = document.getElementById('slide-indicator');
-        
-        if (slides.length === 0) {
-            console.warn("No se encontraron elementos con la clase .carousel-slide");
-            return;
-        }
-
-        slides.forEach((slide, index) => {
-            if (index === currentSlide) {
-                slide.style.opacity = '1';
-                slide.style.zIndex = '10';
-                slide.style.pointerEvents = 'auto';
-            } else {
-                slide.style.opacity = '0';
-                slide.style.zIndex = '1';
-                slide.style.pointerEvents = 'none';
-            }
-        });
-
-        if (indicator) {
-            indicator.textContent = (currentSlide + 1) + ' / ' + slides.length;
-        }
-    }
-
-    window.nextSlide = function() {
-        const slides = document.querySelectorAll('.carousel-slide');
-        if (slides.length === 0) return;
-        currentSlide = (currentSlide + 1) % slides.length;
-        console.log("Siguiente foto, índice:", currentSlide);
-        updateCarousel();
-    }
-
-    window.prevSlide = function() {
-        const slides = document.querySelectorAll('.carousel-slide');
-        if (slides.length === 0) return;
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        console.log("Anterior foto, índice:", currentSlide);
-        updateCarousel();
-    }
-
-    setTimeout(updateCarousel, 100);
-})();
-        
-        // Form Submit Handler
-// Form Submit Handler con conexión real a Formspree sin saltos de página
-        async function handleFormSubmit(e) {
-            e.preventDefault(); // <-- Esto evita que la página suba y baje
-            
-            const form = e.target;
-            const clientName = document.getElementById('client-name').value;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            
-            // Desactiva el botón y muestra estado de carga
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ENVIANDO ORDEN...';
-
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    showNotification(`¡Orden registrada para ${clientName}! Te contactaremos pronto.`);
-                    form.reset();
-                } else {
-                    showNotification("Hubo un error al enviar. Revisa los datos e intenta de nuevo.");
-                }
-            } catch (error) {
-                showNotification("Error de conexión con el taller. Inténtalo más tarde.");
-            } finally {
-                // Restaura el botón a su estado original
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> ENVIAR ORDEN A TALLER';
-            };
-
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    showNotification(`¡Orden registrada para ${clientName}! Te contactaremos pronto.`);
-                    form.reset();
-                } else {
-                    showNotification("Hubo un error al enviar. Revisa los datos e intenta de nuevo.");
-                }
-            } catch (error) {
-                showNotification("Error de conexión con el taller. Inténtalo más tarde.");
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> ENVIAR ORDEN A TALLER';
-            }
-        }
-        }
-
-        // Resume download simulation
-        function downloadResume() {
-            const pdfUrl = 'CV - UX Julia Rubini.pdf'; 
-            const link = document.createElement('a');
-            link.href = pdfUrl;
-            link.download = 'CV - UX Julia Rubini.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            showNotification("¡Descargando Legajo CV de Julia Rubini (PDF)!");
-        }
-
-        // Notification Box
-        function showNotification(text) {
-            const box = document.getElementById('msg-box');
-            document.getElementById('msg-text').innerText = text;
-            box.classList.remove('hidden');
-            setTimeout(() => {
-                box.classList.add('hidden');
-            }, 4000);
-        }
-
-        window.onload = function() {
-            console.log("El Taller Landing Page Single-Page initialized successfully.");
-        };
-    </script>
-
-    <!-- ========================================== -->
-<!-- BOTÓN FLOTANTE "VOLVER ARRIBA"             -->
-<!-- ========================================== -->
-<button id="back-to-top" onclick="scrollToTop()" class="fixed bottom-6 right-6 z-50 bg-carrera hover:bg-hueso text-asfalto px-4 py-3 rounded-full font-mono text-xs font-bold uppercase shadow-2xl flex items-center gap-2 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none border-2 border-asfalto">
-    <i class="fa-solid fa-arrow-up text-sm"></i>
-    <span class="hidden sm:inline">Volver arriba</span>
-</button>
-
-<script>
-    // Lógica para mostrar/ocultar el botón basado en el scroll de la sección "Sobre mí" (#experiencia)
-    window.addEventListener('scroll', function() {
-        const backToTopButton = document.getElementById('back-to-top');
-        const experienciaSection = document.getElementById('experiencia');
-        
-        if (experienciaSection) {
-            const rect = experienciaSection.getBoundingClientRect();
-            // El botón se activa cuando la parte superior de la sección "sobre mí" se acerca o pasa la vista
-            if (window.scrollY > 400) {
-                backToTopButton.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-                backToTopButton.classList.add('opacity-100', 'translate-y-0');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'translate-y-0');
-                backToTopButton.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-            }
-        }
-    });
-
-    // Función para volver suavemente al inicio (top)
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-</script>
-</body>
-</html>
