@@ -899,64 +899,54 @@
         }
 
         // Photo Carousel Logic
-// --- LÓGICA DEL CARRUSEL DE FOTOS ---
-// --- LÓGICA DEL CARRUSEL GLOBAL ---
-let currentSlide = 0;
+(function() {
+    let currentSlide = 0;
 
-function updateCarousel() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const slideIndicator = document.getElementById('slide-indicator');
-    const totalSlides = slides.length;
-
-    if (slides.length === 0) return;
-
-    slides.forEach((slide, index) => {
-        if (index === currentSlide) {
-            slide.classList.remove('opacity-0');
-            slide.classList.add('opacity-100');
-        } else {
-            slide.classList.remove('opacity-100');
-            slide.classList.add('opacity-0');
+    function updateCarousel() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicator = document.getElementById('slide-indicator');
+        
+        if (slides.length === 0) {
+            console.warn("No se encontraron elementos con la clase .carousel-slide");
+            return;
         }
-    });
 
-    if (slideIndicator) {
-        slideIndicator.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        slides.forEach((slide, index) => {
+            if (index === currentSlide) {
+                slide.style.opacity = '1';
+                slide.style.zIndex = '10';
+                slide.style.pointerEvents = 'auto';
+            } else {
+                slide.style.opacity = '0';
+                slide.style.zIndex = '1';
+                slide.style.pointerEvents = 'none';
+            }
+        });
+
+        if (indicator) {
+            indicator.textContent = (currentSlide + 1) + ' / ' + slides.length;
+        }
     }
-}
 
-window.nextSlide = function() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateCarousel();
-}
+    window.nextSlide = function() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (slides.length === 0) return;
+        currentSlide = (currentSlide + 1) % slides.length;
+        console.log("Siguiente foto, índice:", currentSlide);
+        updateCarousel();
+    }
 
-window.prevSlide = function() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateCarousel();
-}
+    window.prevSlide = function() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (slides.length === 0) return;
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        console.log("Anterior foto, índice:", currentSlide);
+        updateCarousel();
+    }
 
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
-}
-
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-}
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateCarousel();
-        }
-
+    setTimeout(updateCarousel, 100);
+})();
+        
         // Form Submit Handler
 // Form Submit Handler con conexión real a Formspree sin saltos de página
         async function handleFormSubmit(e) {
