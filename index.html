@@ -209,69 +209,6 @@
                 </div>
             </div>
         </section>
-
-
-        <!-- ========================================== -->
-        <!-- SECTION 2: CASOS DE ESTUDIO / WORK ORDERS  -->
-        <!-- ========================================== -->
-        <section id="casos" class="space-y-10 scroll-mt-24">
-            <div class="border-b border-asfaltoLight pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <span class="text-carrera font-mono text-xs uppercase tracking-widest block mb-1">// ARCHIVO OFICIAL DEL TALLER</span>
-                    <h2 class="font-bebas text-4xl sm:text-6xl text-hueso tracking-wider">CASOS DE ESTUDIO & ÓRDENES DE TRABAJO</h2>
-                </div>
-                <!-- Filters -->
-                <div class="flex flex-wrap gap-2 font-mono text-xs">
-                    <button onclick="filterProjects('all')" id="btn-all" class="filter-tab px-3.5 py-2 rounded bg-carrera text-asfalto font-bold uppercase transition">Todos</button>
-                    <button onclick="filterProjects('ux')" id="btn-ux" class="filter-tab px-3.5 py-2 rounded bg-asfaltoLight text-hueso hover:border-carrera border border-asfaltoLight uppercase transition">UX & Conversacional</button>
-                    <button onclick="filterProjects('qa')" id="btn-qa" class="filter-tab px-3.5 py-2 rounded bg-asfaltoLight text-hueso hover:border-falcon border border-asfaltoLight uppercase transition">QA & Testing</button>
-                    <button onclick="filterProjects('system')" id="btn-system" class="filter-tab px-3.5 py-2 rounded bg-asfaltoLight text-hueso hover:border-pits border border-asfaltoLight uppercase transition">Design Systems</button>
-                </div>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
-                
-                <!-- Project 1 -->
-                <div class="project-card bg-asfaltoCard border-2 border-asfaltoLight rounded-xl overflow-hidden hover:border-carrera transition group flex flex-col justify-between" data-category="ux">
-                    <div>
-                        <div class="relative h-48 bg-asfaltoLight overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" alt="Fintech Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/121212/FFD100?text=Fintech+UX'">
-                            <div class="absolute top-3 left-3 bg-asfalto text-carrera font-mono text-xs px-2.5 py-1 rounded border border-carrera font-bold">
-                                OT-001 • FINTECH
-                            </div>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-carrera transition tracking-wide">Tablero Financiero B2B & Trading</h3>
-                            <p class="text-sm text-cromo line-clamp-3">Optimización completa de flujos de transacciones bursátiles complejas, reduciendo la fricción operativa y eliminando cuellos de botella para operadores institucionales.</p>
-                            <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">UX Research</span>
-                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Figma</span>
-                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">QA Testing</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <button onclick="openModal('Tablero Financiero B2B', 'Rediseño de la interfaz de transacciones corporativas. Se simplificó la arquitectura de información y se implementó un sistema de alertas en tiempo real, logrando reducir un 42% el tiempo por operación.', 'Figma, React, Jest, Usability Testing', '+42% velocidad de operación, 0 errores críticos en QA.')" class="w-full bg-asfaltoLight hover:bg-carrera hover:text-asfalto text-hueso font-mono text-xs py-3 rounded transition uppercase font-bold flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-file-lines"></i> INSPECCIONAR ORDEN
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card bg-asfaltoCard border-2 border-asfaltoLight rounded-xl overflow-hidden hover:border-falcon transition group flex flex-col justify-between" data-category="ux">
-                    <div>
-                        <div class="relative h-48 bg-asfaltoLight overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Conversational AI" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/121212/3E5C3A?text=Conversational+AI'">
-                            <div class="absolute top-3 left-3 bg-asfalto text-falcon font-mono text-xs px-2.5 py-1 rounded border border-falcon font-bold">
-                                OT-002 • CONVERSACIONAL
-                            </div>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-falcon transition tracking-wide">Asistente Virtual & Chatbot Bancario</h3>
-                            <p class="text-sm text-cromo line-clamp-3">Diseño conversacional (UX writing, árboles de decisión y tono de voz) para automatizar la atención al cliente de más de 2 millones de usuarios en Mercado Libre / Fintechs.</p>
-                            <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2
 <!-- ========================================== -->
         <!-- SECTION 2: CASOS DE ESTUDIO / WORK ORDERS  -->
         <!-- ========================================== -->
@@ -299,21 +236,21 @@
                         <div class="relative h-48 bg-asfaltoLight overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" alt="Fintech Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/121212/FFD100?text=Fintech+UX'">
                             <div class="absolute top-3 left-3 bg-asfalto text-carrera font-mono text-xs px-2.5 py-1 rounded border border-carrera font-bold">
-                                OT-001 • FINTECH
+                                OT-001 • INSURANCE/DATA
                             </div>
                         </div>
                         <div class="p-6 space-y-3">
-                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-carrera transition tracking-wide">Tablero Financiero B2B & Trading</h3>
-                            <p class="text-sm text-cromo line-clamp-3">Optimización completa de flujos de transacciones bursátiles complejas, reduciendo la fricción operativa y eliminando cuellos de botella para operadores institucionales.</p>
+                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-carrera transition tracking-wide">Convertir datos en Diseño</h3>
+                            <p class="text-sm text-cromo line-clamp-3">Investigación y optimización de experiencias digitales en seguros, alineando estrategia de negocio y diseño para escalar procesos de usuarios, logrando reducir un 42% el tiempo por operación.</p>
                             <div class="flex flex-wrap gap-2 pt-2">
                                 <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">UX Research</span>
                                 <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Figma</span>
-                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">QA Testing</span>
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Data</span>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <button onclick="openModal('Tablero Financiero B2B', 'Rediseño de la interfaz de transacciones corporativas. Se simplificó la arquitectura de información y se implementó un sistema de alertas en tiempo real, logrando reducir un 42% el tiempo por operación.', 'Figma, React, Jest, Usability Testing', '+42% velocidad de operación, 0 errores críticos en QA.')" class="w-full bg-asfaltoLight hover:bg-carrera hover:text-asfalto text-hueso font-mono text-xs py-3 rounded transition uppercase font-bold flex items-center justify-center gap-2">
+                        <button onclick="openModal('Convertir datos en Diseño', 'Investigación y optimización de experiencias digitales en seguros, alineando estrategia de negocio y diseño para escalar procesos de usuarios, logrando reducir un 42% el tiempo por operación.', 'Figma, React, Jest, Usability Testing', '+42% velocidad de operación, 0 errores críticos en QA.')" class="w-full bg-asfaltoLight hover:bg-carrera hover:text-asfalto text-hueso font-mono text-xs py-3 rounded transition uppercase font-bold flex items-center justify-center gap-2">
                             <i class="fa-solid fa-file-lines"></i> INSPECCIONAR ORDEN
                         </button>
                     </div>
@@ -329,7 +266,7 @@
                             </div>
                         </div>
                         <div class="p-6 space-y-3">
-                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-falcon transition tracking-wide">Asistente Virtual & Chatbot Bancario</h3>
+                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-falcon transition tracking-wide">Asistente Virtual & Chatbot e-commerce</h3>
                             <p class="text-sm text-cromo line-clamp-3">Diseño conversacional (UX writing, árboles de decisión y tono de voz) para automatizar la atención al cliente de más de 2 millones de usuarios en Mercado Libre / Fintechs.</p>
                             <div class="flex flex-wrap gap-2 pt-2">
                                 <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Conversational UI</span>
@@ -350,20 +287,20 @@
                         <div class="relative h-48 bg-asfaltoLight overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=600" alt="QA Testing" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/121212/D62828?text=QA+Testing'">
                             <div class="absolute top-3 left-3 bg-asfalto text-pits font-mono text-xs px-2.5 py-1 rounded border border-pits font-bold">
-                                OT-003 • QA AUTOMATION
+                                OT-003 • QA Manual
                             </div>
                         </div>
                         <div class="p-6 space-y-3">
-                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-pits transition tracking-wide">Auditoría QA y Regresión E-Commerce</h3>
-                            <p class="text-sm text-cromo line-clamp-3">Plan integral de pruebas automatizadas y manuales para pasarelas de pago de alto tráfico en entornos corporativos (Accenture). Cero caídas en producción durante Hot Sale.</p>
+                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-pits transition tracking-wide">Auditoría QA en Banca</h3>
+                            <p class="text-sm text-cromo line-clamp-3">Plan integral de pruebas manuales para Cobol. Cero caídas en producción durante producción.</p>
                             <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">QA Automation</span>
-                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Cypress / Playwright</span>
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">QA Manual</span>
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Cobol / Azure</span>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <button onclick="openModal('Auditoría QA E-Commerce', 'Ejecución de pruebas de regresión, validación de accesibilidad WCAG y testeo de pasarelas de pago bajo alta concurrencia para evitar fallas críticas.', 'Cypress, Selenium, Postman, Jira', '100% de éxito en eventos masivos de venta online sin downtime.')" class="w-full bg-asfaltoLight hover:bg-pits hover:text-hueso text-hueso font-mono text-xs py-3 rounded transition uppercase font-bold flex items-center justify-center gap-2">
+                        <button onclick="openModal('Auditoría QA', 'Plan integral de pruebas manuales para Cobol. Cero caídas en producción durante producción.', 'Cobol, Azure, Postman, Jira', '100% de éxito en ejecución de pruebas.')" class="w-full bg-asfaltoLight hover:bg-pits hover:text-hueso text-hueso font-mono text-xs py-3 rounded transition uppercase font-bold flex items-center justify-center gap-2">
                             <i class="fa-solid fa-file-lines"></i> INSPECCIONAR ORDEN
                         </button>
                     </div>
