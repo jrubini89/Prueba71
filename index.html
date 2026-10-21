@@ -1,266 +1,682 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Julia · Mi Taller de UX</title>
-  
-  <!-- Tipografías -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Taller | Julia Rubini - Senior UX Designer & QA Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Bebas Neue, Space Grotesk, Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for mechanic icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        asfalto: '#121212',
+                        hueso: '#F3ECDD',
+                        carrera: '#FFD100',
+                        falcon: '#3E5C3A',
+                        pits: '#D62828',
+                        cromo: '#B9BDC3',
+                        asfaltoLight: '#1E1E1E',
+                        asfaltoCard: '#181818'
+                    },
+                    fontFamily: {
+                        'bebas': ['Bebas Neue', 'sans-serif'],
+                        'sans': ['Space Grotesk', 'sans-serif'],
+                        'mono': ['Space Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #F3ECDD;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        .checkered-border {
+            background-image: linear-gradient(45deg, #121212 25%, transparent 25%), 
+                              linear-gradient(-45deg, #121212 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #121212 75%), 
+                              linear-gradient(-45deg, transparent 75%, #121212 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            background-color: #FFD100;
+        }
 
-    body, html {
-      width: 100%;
-      height: 100%;
-      background-color: #121212;
-      font-family: 'Space Mono', monospace;
-      color: #F3ECDD;
-      scroll-behavior: smooth; /* Hace que el desplazamiento al hacer clic sea suave */
-    }
+        .carbon-bg {
+            background-color: #121212;
+            background-image: radial-gradient(rgba(255, 209, 0, 0.04) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
 
-    /* Cada sección ocupa una pantalla completa (100vh) */
-    .section-screen {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-    }
+        .work-order-shadow {
+            box-shadow: 6px 6px 0px #FFD100;
+        }
 
-    .screen-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      z-index: 1;
-    }
+        .work-order-shadow-falcon {
+            box-shadow: 6px 6px 0px #3E5C3A;
+        }
 
-    /* ==========================================
-       SECCIÓN 1: HOME / PORTADA
-       ========================================== */
-    .top-nav {
-      position: absolute;
-      top: 24px;
-      right: 40px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      z-index: 10;
-    }
+        .work-order-shadow-pits {
+            box-shadow: 6px 6px 0px #D62828;
+        }
 
-    .btn-garage {
-      background-color: #cfd8c7;
-      color: #1c2619;
-      border: 2px solid #232b20;
-      padding: 6px 14px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 19px;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      box-shadow: 2px 2px 0px #121212;
-      transition: all 0.15s ease-in-out;
-      cursor: pointer;
-      text-align: center;
-    }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFD100;
+            border-radius: 2px;
+        }
 
-    .btn-garage:hover {
-      background-color: #ffd100;
-      color: #121212;
-      transform: translate(-1px, -1px);
-      box-shadow: 4px 4px 0px #121212;
-    }
-
-    .btn-garage.cv-btn {
-      background-color: #ffd100;
-      color: #121212;
-    }
-
-    .hero-content {
-      position: absolute;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      width: 100%;
-      max-width: 900px;
-      padding: 0 20px;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(48px, 7vw, 100px);
-      line-height: 0.95;
-      letter-spacing: 0.05em;
-      color: #F3ECDD;
-      text-shadow: 4px 4px 0px #121212, 0 0 20px rgba(0,0,0,0.8);
-      margin-bottom: 6px;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(11px, 1.2vw, 16px);
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #F3ECDD;
-      text-shadow: 2px 2px 4px #121212;
-      margin-bottom: 4px;
-    }
-
-    .hero-tagline {
-      font-size: clamp(10px, 1vw, 14px);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #ffd100;
-      text-shadow: 2px 2px 4px #121212;
-    }
-
-    /* ==========================================
-       SECCIONES "SOBRE MÍ" (PANTALLAS 1, 2 y 3)
-       ========================================== */
-    @keyframes popIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.8) translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-
-    .dialog-box {
-      position: absolute;
-      top: 100px;
-      left: 200px;
-      width: 450px;
-      padding: 35px 40px;
-      background: #F3ECDD;
-      border: 3px solid #121212;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      text-align: center;
-      color: #121212;
-      font-size: 15px;
-      line-height: 1.5;
-      box-shadow: 6px 6px 0px rgba(0,0,0,0.8);
-      z-index: 10;
-      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .dialog-box:hover {
-      transform: scale(1.03);
-      box-shadow: 8px 8px 0px #FFD100;
-    }
-
-    .nav-buttons {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 15px;
-      z-index: 10;
-    }
-
-    .action-btn {
-      background-color: #121212;
-      color: #F3ECDD;
-      border: 2px solid #FFD100;
-      padding: 8px 24px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 18px;
-      letter-spacing: 0.08em;
-      cursor: pointer;
-      box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
-      transition: all 0.2s ease;
-      text-decoration: none;
-    }
-
-    .action-btn:hover {
-      background-color: #FFD100;
-      color: #121212;
-      transform: translateY(-2px);
-    }
-  </style>
+        .stamp-badge {
+            border: 2px dashed #FFD100;
+            transform: rotate(-2deg);
+            display: inline-block;
+            padding: 4px 12px;
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            color: #FFD100;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body>
+<body class="carbon-bg min-h-screen flex flex-col justify-between selection:bg-carrera selection:text-asfalto">
 
-  <!-- ================= SECCIÓN 1: HOME ================= -->
-  <section id="home" class="section-screen">
-    <img src="taller.jpg" alt="Mi Taller de UX - Fondo" class="screen-bg">
+    <!-- Top Banner / Checkered Bar -->
+    <div class="w-full h-4 checkered-border z-50 sticky top-0"></div>
 
-    <nav class="top-nav">
-      <a href="#sobremi-1" class="btn-garage">Sobre Mí</a>
-      <a href="#proyectos" class="btn-garage">Proyectos</a>
-      <a href="#prototipos" class="btn-garage">Prototipos</a>
-      <a href="#dis-grafico" class="btn-garage">Dis. Gráfico</a>
-      <a href="#contacto" class="btn-garage">Contacto</a>
-      <a href="CV_Julia_UX.pdf" target="_blank" class="btn-garage cv-btn">Descarga Mi CV</a>
-    </nav>
+    <!-- Navigation Header (Fixed Workshop Style) -->
+    <header class="bg-asfalto/95 backdrop-blur border-b border-asfaltoLight sticky top-4 z-40 px-4 sm:px-8 py-3.5 transition-all">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Brand -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="bg-carrera text-asfalto p-2 rounded font-bebas text-2xl tracking-wider flex items-center justify-center shadow-md group-hover:scale-105 transition">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+                <div>
+                    <h1 class="font-bebas text-2xl sm:text-3xl tracking-wider text-hueso flex items-center gap-2">
+                        EL TALLER <span class="text-xs font-mono bg-falcon text-hueso px-2 py-0.5 rounded-full uppercase not-italic">UX & QA Garage</span>
+                    </h1>
+                    <p class="text-[11px] font-mono text-cromo tracking-tight">JULIA RUBINI — TUNING DIGITAL & CALIBRACIÓN</p>
+                </div>
+            </a>
 
-    <section class="hero-content">
-      <h1 class="hero-title">HOLA, SOY JULIA</h1>
-      <p class="hero-subtitle">Diseño experiencias digitales claras, útiles y con impacto real</p>
-      <p class="hero-tagline">Adelante, este es mi taller...</p>
-    </section>
-  </section>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-6 font-mono text-sm">
+                <a href="#casos" class="hover:text-carrera transition flex items-center gap-1.5"><i class="fa-solid fa-clipboard-list text-xs text-carrera"></i> Casos de Estudio</a>
+                <a href="#experiencia" class="hover:text-falcon transition flex items-center gap-1.5"><i class="fa-solid fa-user-gear text-xs text-falcon"></i> Sobre Mí</a>
+                <a href="#contacto" class="hover:text-pits transition flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-xs text-pits"></i> Recepción</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="flex items-center gap-3">
+                <a href="#contacto" class="hidden sm:inline-flex bg-carrera hover:bg-hueso text-asfalto font-mono font-bold text-xs px-4 py-2.5 rounded uppercase tracking-wider transition shadow">
+                    <i class="fa-solid fa-stethoscope mr-1.5"></i> Pedir Diagnóstico
+                </a>
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-hueso text-2xl p-1 focus:outline-none">
+                    <i class="fa-solid fa-bars" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Nav -->
+        <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 border-t border-asfaltoLight mt-3 font-mono text-sm space-y-2">
+            <a href="#casos" onclick="toggleMobileMenu()" class="block py-2 px-3 hover:bg-asfaltoLight rounded text-hueso">Casos de Estudio</a>
+            <a href="#experiencia" onclick="toggleMobileMenu()" class="block py-2 px-3 hover:bg-asfaltoLight rounded text-hueso">Sobre Mí / Experiencia</a>
+            <a href="#contacto" onclick="toggleMobileMenu()" class="block py-2 px-3 hover:bg-asfaltoLight rounded text-hueso">Contacto & Recepción</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container (Single Page Landing) -->
+    <main class="flex-grow max-w-7xl mx-auto w-full p-4 sm:p-8 space-y-24">
+
+        <!-- ========================================== -->
+        <!-- SECTION 1: HERO & CUSTOM AVATAR            -->
+        <!-- ========================================== -->
+        <section id="hero" class="pt-8 sm:pt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-falcon/20 border border-falcon text-falcon font-mono text-xs px-3 py-1 rounded">
+                    <i class="fa-solid fa-circle-check text-falcon"></i> TALLER ABIERTO • DISPONIBLE PARA PROYECTOS Y ASESORÍAS
+                </div>
+                <h2 class="font-bebas text-5xl sm:text-8xl tracking-wider text-hueso leading-none">
+                    AFINANDO LA <span class="text-carrera underline decoration-falcon">EXPERIENCIA</span> CON PRECISIÓN DE ALTA GAMA.
+                </h2>
+                <p class="text-base sm:text-lg text-cromo font-sans leading-relaxed">
+                    Soy <strong class="text-hueso">Julia Rubini</strong>. Diseñadora UX Senior y Especialista QA con alma de mecánica de autos clásicos. Conecto la empatía del diseño conversacional e interfaces complejas con la rigorosa ingeniería de pruebas para que tus productos rueden sin fallas.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#casos" class="bg-carrera hover:bg-hueso text-asfalto font-bebas text-xl px-8 py-3 rounded tracking-wider shadow-lg transition flex items-center gap-2">
+                        <i class="fa-solid fa-wrench"></i> VER ÓRDENES DE TRABAJO
+                    </a>
+                    <a href="#contacto" class="bg-asfaltoLight hover:bg-asfalto border-2 border-cromo text-hueso font-mono text-sm px-6 py-3 rounded transition flex items-center gap-2">
+                        <i class="fa-solid fa-stethoscope"></i> SOLICITAR DIAGNÓSTICO
+                    </a>
+                </div>
+            </div>
+
+            <!-- Custom Avatar & Workshop Badge Column -->
+            <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                <div class="relative w-full max-w-sm bg-asfaltoCard border-2 border-cromo/30 rounded-2xl p-6 shadow-2xl text-center space-y-4">
+                    <!-- Mechanic Avatar Frame (Redhead with tattoos aesthetic styling) -->
+                    <div class="relative w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-carrera shadow-xl bg-asfaltoLight group">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Julia Rubini" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition duration-500" onerror="this.src='https://placehold.co/400x400/1e1e1e/FFD100?text=JR'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-asfalto/80 via-transparent to-transparent flex items-end justify-center pb-3">
+                            <span class="font-mono text-xs text-carrera font-bold bg-asfalto/90 px-3 py-0.5 rounded border border-carrera">JR // MECÁNICA UX</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-bebas text-3xl text-hueso tracking-wider">JULIA RUBINI</h3>
+                        <p class="text-xs font-mono text-cromo">Senior UX Designer & QA Automation</p>
+                    </div>
+                    <div class="pt-2 border-t border-asfaltoLight flex justify-around text-center font-mono text-xs">
+                        <div>
+                            <span class="text-carrera font-bold block text-lg">+8 AÑOS</span>
+                            <span class="text-cromo">En Pista</span>
+                        </div>
+                        <div class="border-r border-asfaltoLight"></div>
+                        <div>
+                            <span class="text-falcon font-bold block text-lg">ACCENTURE</span>
+                            <span class="text-cromo">& M. LIBRE</span>
+                        </div>
+                        <div class="border-r border-asfaltoLight"></div>
+                        <div>
+                            <span class="text-pits font-bold block text-lg">100%</span>
+                            <span class="text-cromo">QA Validado</span>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <span class="stamp-badge">VERIFICADA EN BANCO DE PRUEBAS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-  <!-- ================= SECCIÓN SOBRE MÍ (PANTALLA 1) ================= -->
-  <section id="sobremi-1" class="section-screen">
-    <img src="sobremi-1.jpg" alt="Sobre mi pantalla 1" class="screen-bg">
-    
-    <div class="dialog-box">
-      ¡Hola, soy Julia!<br>
-      Te doy la bienvenida a mi taller.<br>
-      Diseño experiencias digitales claras y útiles. Pasá y te cuento un poco sobre mí.
+        <!-- ========================================== -->
+        <!-- SECTION 2: CASOS DE ESTUDIO / WORK ORDERS  -->
+        <!-- ========================================== -->
+        <section id="casos" class="space-y-10 scroll-mt-24">
+            <div class="border-b border-asfaltoLight pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <span class="text-carrera font-mono text-xs uppercase tracking-widest block mb-1">// ARCHIVO OFICIAL DEL TALLER</span>
+                    <h2 class="font-bebas text-4xl sm:text-6xl text-hueso tracking-wider">CASOS DE ESTUDIO & ÓRDENES DE TRABAJO</h2>
+                </div>
+                <!-- Filters -->
+                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                    <button onclick="filterProjects('all')" id="btn-all" class="filter-tab px-3.5 py-2 rounded bg-carrera text-asfalto font-bold uppercase transition">Todos</button>
+                    <button onclick="filterProjects('ux')" id="btn-ux" class="filter-tab px-3.5 py-2 rounded bg-asfaltoLight text-hueso hover:border-carrera border border-asfaltoLight uppercase transition">UX & Conversacional</button>
+                    <button onclick="filterProjects('qa')" id="btn-qa" class="filter-tab px-3.5 py-2 rounded bg-asfaltoLight text-hueso hover:border-falcon border border-asfaltoLight uppercase transition">QA & Testing</button>
+                    <button onclick="filterProjects('system')" id="btn-system" class="filter-tab px-3.5 py-2 rounded bg-asfaltoLight text-hueso hover:border-pits border border-asfaltoLight uppercase transition">Design Systems</button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card bg-asfaltoCard border-2 border-asfaltoLight rounded-xl overflow-hidden hover:border-carrera transition group flex flex-col justify-between" data-category="ux">
+                    <div>
+                        <div class="relative h-48 bg-asfaltoLight overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" alt="Fintech Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/121212/FFD100?text=Fintech+UX'">
+                            <div class="absolute top-3 left-3 bg-asfalto text-carrera font-mono text-xs px-2.5 py-1 rounded border border-carrera font-bold">
+                                OT-001 • FINTECH
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-carrera transition tracking-wide">Tablero Financiero B2B & Trading</h3>
+                            <p class="text-sm text-cromo line-clamp-3">Optimización completa de flujos de transacciones bursátiles complejas, reduciendo la fricción operativa y eliminando cuellos de botella para operadores institucionales.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">UX Research</span>
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Figma</span>
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">QA Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Tablero Financiero B2B', 'Rediseño de la interfaz de transacciones corporativas. Se simplificó la arquitectura de información y se implementó un sistema de alertas en tiempo real, logrando reducir un 42% el tiempo por operación.', 'Figma, React, Jest, Usability Testing', '+42% velocidad de operación, 0 errores críticos en QA.')" class="w-full bg-asfaltoLight hover:bg-carrera hover:text-asfalto text-hueso font-mono text-xs py-3 rounded transition uppercase font-bold flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-lines"></i> INSPECCIONAR ORDEN
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-asfaltoCard border-2 border-asfaltoLight rounded-xl overflow-hidden hover:border-falcon transition group flex flex-col justify-between" data-category="ux">
+                    <div>
+                        <div class="relative h-48 bg-asfaltoLight overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Conversational AI" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/121212/3E5C3A?text=Conversational+AI'">
+                            <div class="absolute top-3 left-3 bg-asfalto text-falcon font-mono text-xs px-2.5 py-1 rounded border border-falcon font-bold">
+                                OT-002 • CONVERSACIONAL
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-falcon transition tracking-wide">Asistente Virtual & Chatbot Bancario</h3>
+                            <p class="text-sm text-cromo line-clamp-3">Diseño conversacional (UX writing, árboles de decisión y tono de voz) para automatizar la atención al cliente de más de 2 millones de usuarios en Mercado Libre / Fintechs.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Conversational UI</span>
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">UX Writing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Asistente Virtual & Chatbot', 'Estructuración del flujo conversacional para resolución autónoma de reclamos bancarios. Se diseñó el tono de voz de la marca y las respuestas ante escenarios de error.', 'Figma, Voiceflow, User Testing, NLP Testing', 'Resolución automática del 78% de consultas sin derivación a humano.')" class="w-full bg-asfaltoLight hover:bg-falcon hover:text-hueso text-hueso font-mono text-xs py-3 rounded transition uppercase font-bold flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-lines"></i> INSPECCIONAR ORDEN
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-asfaltoCard border-2 border-asfaltoLight rounded-xl overflow-hidden hover:border-pits transition group flex flex-col justify-between" data-category="qa">
+                    <div>
+                        <div class="relative h-48 bg-asfaltoLight overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=600" alt="QA Testing" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/121212/D62828?text=QA+Testing'">
+                            <div class="absolute top-3 left-3 bg-asfalto text-pits font-mono text-xs px-2.5 py-1 rounded border border-pits font-bold">
+                                OT-003 • QA AUTOMATION
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-pits transition tracking-wide">Auditoría QA y Regresión E-Commerce</h3>
+                            <p class="text-sm text-cromo line-clamp-3">Plan integral de pruebas automatizadas y manuales para pasarelas de pago de alto tráfico en entornos corporativos (Accenture). Cero caídas en producción durante Hot Sale.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">QA Automation</span>
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Cypress / Playwright</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Auditoría QA E-Commerce', 'Ejecución de pruebas de regresión, validación de accesibilidad WCAG y testeo de pasarelas de pago bajo alta concurrencia para evitar fallas críticas.', 'Cypress, Selenium, Postman, Jira', '100% de éxito en eventos masivos de venta online sin downtime.')" class="w-full bg-asfaltoLight hover:bg-pits hover:text-hueso text-hueso font-mono text-xs py-3 rounded transition uppercase font-bold flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-lines"></i> INSPECCIONAR ORDEN
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-asfaltoCard border-2 border-asfaltoLight rounded-xl overflow-hidden hover:border-carrera transition group flex flex-col justify-between" data-category="system">
+                    <div>
+                        <div class="relative h-48 bg-asfaltoLight overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600" alt="Design System" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/121212/FFD100?text=Design+System'">
+                            <div class="absolute top-3 left-3 bg-asfalto text-carrera font-mono text-xs px-2.5 py-1 rounded border border-carrera font-bold">
+                                OT-004 • DESIGN SYSTEM
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="font-bebas text-3xl text-hueso group-hover:text-carrera transition tracking-wide">Design System "Falcon" & Tokens</h3>
+                            <p class="text-sm text-cromo line-clamp-3">Creación, estandarización y documentación de componentes de interfaz escalables con tokens sincronizados para acelerar el desarrollo entre equipos de diseño y código.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Design Systems</span>
+                                <span class="text-xs font-mono bg-asfaltoLight text-hueso px-2.5 py-0.5 rounded">Figma Variables</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Design System Falcon', 'Estandarización de componentes visuales y estados interactivos. Reducción drástica de discrepancias entre mockups de Figma y la implementación front-end.', 'Figma, Storybook, Zeroheight', 'Aceleración del 3x en entregas de desarrollo front-end.')" class="w-full bg-asfaltoLight hover:bg-carrera hover:text-asfalto text-hueso font-mono text-xs py-3 rounded transition uppercase font-bold flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-lines"></i> INSPECCIONAR ORDEN
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- SECTION 3: SOBRE MÍ / EXPERIENCIA          -->
+        <!-- ========================================== -->
+        <section id="experiencia" class="space-y-12 scroll-mt-24">
+            <div class="border-b border-asfaltoLight pb-6">
+                <div class="flex items-center gap-2 text-falcon font-mono text-xs uppercase mb-1">
+                    <i class="fa-solid fa-id-card-clip"></i> LEGAJO PROFESIONAL #79-JR
+                </div>
+                <h2 class="font-bebas text-4xl sm:text-6xl text-hueso tracking-wider">EL MECÁNICO: TRAYECTORIA & ESPECIALIDADES</h2>
+                <p class="text-cromo font-sans mt-2 max-w-3xl">
+                    Con experiencia en gigantes tecnológicos como <strong class="text-hueso">Accenture</strong> y <strong class="text-hueso">Mercado Libre</strong>, domino tanto la arquitectura UX centrada en el usuario como el control de calidad QA y el diseño conversacional de alta precisión.
+                </p>
+            </div>
+
+            <!-- Experience Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Bio & Experience Timeline -->
+                <div class="lg:col-span-7 bg-asfaltoCard border-2 border-asfaltoLight rounded-xl p-6 sm:p-8 space-y-6">
+                    <h3 class="font-bebas text-3xl text-hueso border-b border-asfaltoLight pb-3 flex items-center gap-2 tracking-wide">
+                        <i class="fa-solid fa-timeline text-carrera"></i> EXPERIENCIA EN PISTA (TRAYECTORIA)
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Job 1 -->
+                        <div class="border-l-2 border-carrera pl-4 space-y-1 relative">
+                            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-carrera border-2 border-asfalto"></div>
+                            <span class="font-mono text-xs text-carrera font-bold">2021 — PRESENTE</span>
+                            <h4 class="font-bebas text-2xl text-hueso tracking-wide">Senior UX & QA Specialist — Apex Garage / Consultoría</h4>
+                            <p class="text-sm text-cromo">Liderazgo de proyectos UX, auditorías de usabilidad, diseño conversacional y automatización de pruebas para plataformas fintech y e-commerce.</p>
+                        </div>
+                        <!-- Job 2 -->
+                        <div class="border-l-2 border-falcon pl-4 space-y-1 relative">
+                            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-falcon border-2 border-asfalto"></div>
+                            <span class="font-mono text-xs text-falcon font-bold">2018 — 2021</span>
+                            <h4 class="font-bebas text-2xl text-hueso tracking-wide">UX Designer & QA Engineer — Accenture</h4>
+                            <p class="text-sm text-cromo">Desarrollo y testeo de soluciones digitales corporativas de gran escala. Implementación de flujos UX y control de calidad bajo estrictos estándares internacionales.</p>
+                        </div>
+                        <!-- Job 3 -->
+                        <div class="border-l-2 border-pits pl-4 space-y-1 relative">
+                            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-pits border-2 border-asfalto"></div>
+                            <span class="font-mono text-xs text-pits font-bold">2016 — 2018</span>
+                            <h4 class="font-bebas text-2xl text-hueso tracking-wide">QA & Conversational Designer — Mercado Libre</h4>
+                            <p class="text-sm text-cromo">Pruebas exhaustivas de flujos de pago y optimización de asistentes virtuales y flujos conversacionales de atención al cliente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toolkit / Skills Toolbox -->
+                <div class="lg:col-span-5 bg-asfaltoCard border-2 border-asfaltoLight rounded-xl p-6 sm:p-8 space-y-6">
+                    <h3 class="font-bebas text-3xl text-hueso border-b border-asfaltoLight pb-3 flex items-center gap-2 tracking-wide">
+                        <i class="fa-solid fa-toolbox text-falcon"></i> CAJA DE HERRAMIENTAS
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Skill 1 -->
+                        <div class="bg-asfaltoLight/50 p-4 rounded-lg border border-asfaltoLight space-y-2">
+                            <h4 class="font-mono text-xs text-carrera uppercase font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-pen-nib"></i> UX & Conversational Design
+                            </h4>
+                            <p class="text-xs text-cromo font-sans">Figma, Prototipado Avanzado, Design Systems, UX Writing, Arquitectura de Información y Chatbots / Asistentes Virtuales.</p>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="bg-asfaltoLight/50 p-4 rounded-lg border border-asfaltoLight space-y-2">
+                            <h4 class="font-mono text-xs text-falcon uppercase font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-bug-slash"></i> QA & Testing Rigoroso
+                            </h4>
+                            <p class="text-xs text-cromo font-sans">Casos de prueba, Cypress / Playwright, auditorías WCAG de accesibilidad, regresión y validación de flujos sin fricción.</p>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="bg-asfaltoLight/50 p-4 rounded-lg border border-asfaltoLight space-y-2">
+                            <h4 class="font-mono text-xs text-pits uppercase font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-code"></i> Metodología & Código Base
+                            </h4>
+                            <p class="text-xs text-cromo font-sans">Agile / Scrum, Git, HTML/CSS/Tailwind y JavaScript básico para una comunicación fluida con equipos de ingeniería.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- SECTION 4: CONTACTO & RECEPCIÓN            -->
+        <!-- ========================================== -->
+        <section id="contacto" class="space-y-12 scroll-mt-24">
+            <div class="border-b border-asfaltoLight pb-6">
+                <div class="flex items-center gap-2 text-carrera font-mono text-xs uppercase mb-1">
+                    <i class="fa-solid fa-gas-pump"></i> MOSTRADOR DE RECEPCIÓN & TURNOS
+                </div>
+                <h2 class="font-bebas text-4xl sm:text-6xl text-hueso tracking-wider">CONTACTO & SOLICITUD DE TURNO</h2>
+                <p class="text-cromo font-sans mt-2 max-w-3xl">
+                    ¿Tenés un proyecto en boxes o querés auditar la usabilidad y calidad QA de tu plataforma? Dejame tus datos en la orden de servicio y te responderé en menos de 24 horas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Form -->
+                <div class="lg:col-span-7 bg-asfaltoCard border-2 border-asfaltoLight rounded-xl p-6 sm:p-8 space-y-6 shadow-xl">
+                    <div class="flex justify-between items-center border-b border-asfaltoLight pb-4">
+                        <h3 class="font-bebas text-3xl text-hueso tracking-wider">NUEVA ORDEN DE SERVICIO</h3>
+                        <span class="font-mono text-xs text-carrera bg-asfaltoLight px-2.5 py-1 rounded">FORMULARIO #79</span>
+                    </div>
+
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Nombre / Empresa *</label>
+                            <input type="text" id="client-name" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Ej. Juan Pérez (Startup Tech)">
+                        </div>
+
+                        <div>
+                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Correo Electrónico *</label>
+                            <input type="email" id="client-email" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="juan@empresa.com">
+                        </div>
+
+                        <div>
+                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Tipo de Servicio *</label>
+                            <select id="service-type" class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans">
+                                <option value="ux-design">Rediseño UX & Arquitectura</option>
+                                <option value="qa-audit">Auditoría QA & Usabilidad</option>
+                                <option value="conversational">Diseño Conversacional & Chatbots</option>
+                                <option value="design-system">Construcción de Design System</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Detalles de la Falla o Proyecto *</label>
+                            <textarea id="client-message" rows="4" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Describí brevemente qué objetivo querés lograr o qué problema tiene tu plataforma..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-carrera hover:bg-hueso text-asfalto font-bebas text-2xl py-3.5 rounded transition uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> ENVIAR ORDEN A TALLER
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info & Resume Download -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="bg-asfaltoCard border-2 border-asfaltoLight rounded-xl p-6 sm:p-8 space-y-6">
+                        <h3 class="font-bebas text-3xl text-hueso border-b border-asfaltoLight pb-3 tracking-wider">COORDENADAS DIRECTAS</h3>
+                        <div class="space-y-4 font-mono text-sm">
+                            <div class="flex items-center gap-4 bg-asfalto p-4 rounded border border-asfaltoLight">
+                                <div class="bg-carrera text-asfalto p-3 rounded">
+                                    <i class="fa-solid fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-cromo block">CORREO ELECTRÓNICO</span>
+                                    <a href="mailto:julia.rubini.ux@gmail.com" class="text-hueso hover:text-carrera font-bold">julia.rubini.ux@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 bg-asfalto p-4 rounded border border-asfaltoLight">
+                                <div class="bg-falcon text-hueso p-3 rounded">
+                                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-cromo block">LINKEDIN (PIT STOP)</span>
+                                    <a href="https://linkedin.com" target="_blank" class="text-hueso hover:text-falcon font-bold">linkedin.com/in/julia-rubini-ux</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 bg-asfalto p-4 rounded border border-asfaltoLight">
+                                <div class="bg-pits text-hueso p-3 rounded">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-cromo block">GITHUB (REPOSITORIO)</span>
+                                    <a href="https://github.com" target="_blank" class="text-hueso hover:text-pits font-bold">github.com/juliarubini</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resume Download Card -->
+                    <div class="bg-asfaltoCard border-2 border-carrera rounded-xl p-6 sm:p-8 space-y-4 text-center">
+                        <div class="inline-block bg-carrera/20 text-carrera p-3 rounded-full mb-1">
+                            <i class="fa-solid fa-file-arrow-down text-2xl"></i>
+                        </div>
+                        <h4 class="font-bebas text-3xl text-hueso tracking-wider">DESCARGAR LEGAJO CV (PDF)</h4>
+                        <p class="text-sm text-cromo font-sans">Obtené la versión resumida para imprimir de mi trayectoria en UX Research, Accenture, Mercado Libre y QA Automation.</p>
+                        <button onclick="downloadResume()" class="bg-carrera hover:bg-hueso text-asfalto font-mono text-xs px-6 py-3 rounded transition font-bold uppercase inline-flex items-center gap-2">
+                            <i class="fa-solid fa-download"></i> DESCARGAR CURRICULUM VITAE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Checkered & Copyright -->
+    <footer class="bg-asfalto border-t border-asfaltoLight mt-24 py-8 px-4 text-center space-y-4">
+        <div class="w-full h-3 checkered-border mb-6"></div>
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 font-mono text-xs text-cromo">
+            <div>
+                <p>© 2026 JULIA RUBINI — EL TALLER UX & QA GARAGE. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="#hero" class="hover:text-carrera">Inicio</a>
+                <a href="#casos" class="hover:text-carrera">Casos</a>
+                <a href="#experiencia" class="hover:text-carrera">Sobre Mí</a>
+                <a href="#contacto" class="hover:text-carrera">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ========================================== -->
+    <!-- CASE STUDY MODAL                           -->
+    <!-- ========================================== -->
+    <div id="case-modal" class="fixed inset-0 bg-asfalto/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-asfaltoCard border-2 border-carrera rounded-xl max-w-2xl w-full p-6 sm:p-8 space-y-6 relative shadow-2xl animate-fadeIn">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-cromo hover:text-carrera text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="flex items-center gap-2 text-carrera font-mono text-xs uppercase">
+                <i class="fa-solid fa-wrench"></i> INFORME TÉCNICO DETALLADO
+            </div>
+            
+            <h3 id="modal-title" class="font-bebas text-3xl sm:text-4xl text-hueso tracking-wide">Título del Proyecto</h3>
+            
+            <div class="space-y-4 text-sm font-sans text-cromo">
+                <div>
+                    <h4 class="font-mono text-xs text-carrera uppercase mb-1">// Diagnóstico & Solución Aplicada</h4>
+                    <p id="modal-desc" class="text-hueso text-base">Descripción detallada...</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-mono text-xs text-falcon uppercase mb-1">// Herramientas & Stack en Banco</h4>
+                    <p id="modal-tools" class="font-mono text-xs bg-asfalto p-3 rounded border border-asfaltoLight text-hueso">Herramientas...</p>
+                </div>
+
+                <div>
+                    <h4 class="font-mono text-xs text-pits uppercase mb-1">// Resultados en Pista</h4>
+                    <p id="modal-results" class="font-mono text-xs bg-asfalto p-3 rounded border border-asfaltoLight text-carrera font-bold">Resultados...</p>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-asfaltoLight flex justify-end">
+                <button onclick="closeModal()" class="bg-carrera hover:bg-hueso text-asfalto font-mono text-xs px-6 py-2.5 rounded font-bold uppercase transition">
+                    CERRAR INFORME
+                </button>
+            </div>
+        </div>
     </div>
 
-    <div class="nav-buttons">
-      <a href="#sobremi-2" class="action-btn">Siguiente →</a>
-    </div>
-  </section>
 
-
-  <!-- ================= SECCIÓN SOBRE MÍ (PANTALLA 2) ================= -->
-  <section id="sobremi-2" class="section-screen">
-    <img src="sobremi-2.jpg" alt="Sobre mi pantalla 2" class="screen-bg">
-    
-    <div class="dialog-box">
-      Egresé de una técnica en mecánica y pasé por Diseño Industrial. Ahí descubrí que me gusta que las cosas funcionen y se vean bien. Hoy lo hago con experiencias digitales.
-    </div>
-
-    <div class="nav-buttons">
-      <a href="#sobremi-1" class="action-btn">← Volver</a>
-      <a href="#sobremi-3" class="action-btn">Siguiente →</a>
-    </div>
-  </section>
-
-
-  <!-- ================= SECCIÓN SOBRE MÍ (PANTALLA 3) ================= -->
-  <section id="sobremi-3" class="section-screen">
-    <img src="sobremi-3.jpg" alt="Sobre mi pantalla 3" class="screen-bg">
-    
-    <div class="dialog-box">
-      Lo mío es que lo complejo se sienta simple: pruebo, ajusto y vuelvo a probar, como en un taller. Por eso mi portfolio es uno. Entre prueba y prueba: buena música, autos clásicos y mate.
+    <!-- ========================================== -->
+    <!-- CUSTOM NOTIFICATION BOX                    -->
+    <!-- ========================================== -->
+    <div id="msg-box" class="fixed bottom-6 right-6 bg-asfaltoCard border-2 border-carrera text-hueso p-4 rounded-xl shadow-2xl z-50 hidden max-w-sm flex items-center gap-4">
+        <div class="bg-carrera text-asfalto p-3 rounded-full text-xl">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <h4 class="font-bebas text-xl text-carrera tracking-wider">¡ORDEN RECIBIDA!</h4>
+            <p id="msg-text" class="text-xs font-mono text-cromo">Tu solicitud ha ingresado correctamente al taller.</p>
+        </div>
     </div>
 
-    <div class="nav-buttons">
-      <a href="#sobremi-2" class="action-btn">← Volver</a>
-      <a href="#home" class="action-btn">Volver al inicio ⇧</a>
-    </div>
-  </section>
 
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT LOGIC                           -->
+    <!-- ========================================== -->
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars';
+            } else {
+                icon.className = 'fa-solid fa-xmark';
+            }
+        }
+
+        // Filter Projects in Landing
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const tabs = document.querySelectorAll('.filter-tab');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-carrera', 'text-asfalto', 'font-bold');
+                tab.classList.add('bg-asfaltoLight', 'text-hueso');
+            });
+
+            const activeTab = document.getElementById('btn-' + category);
+            if (activeTab) {
+                activeTab.classList.remove('bg-asfaltoLight', 'text-hueso');
+                activeTab.classList.add('bg-carrera', 'text-asfalto', 'font-bold');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Management
+        function openModal(title, desc, tools, results) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal-tools').innerText = tools;
+            document.getElementById('modal-results').innerText = results;
+            document.getElementById('case-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('case-modal').classList.add('hidden');
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const clientName = document.getElementById('client-name').value;
+            showNotification(`Orden registrada para ${clientName}. Te contactaremos pronto.`);
+            document.getElementById('contact-form').reset();
+        }
+
+        // Resume download simulation
+        function downloadResume() {
+            showNotification("Descargando Legajo CV de Julia Rubini (PDF)...");
+        }
+
+        // Notification Box
+        function showNotification(text) {
+            const box = document.getElementById('msg-box');
+            document.getElementById('msg-text').innerText = text;
+            box.classList.remove('hidden');
+            setTimeout(() => {
+                box.classList.add('hidden');
+            }, 4000);
+        }
+
+        window.onload = function() {
+            console.log("El Taller Landing Page Single-Page initialized.");
+        };
+    </script>
 </body>
 </html>
