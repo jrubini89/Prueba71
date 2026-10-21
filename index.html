@@ -19,22 +19,24 @@
 
     body, html {
       width: 100%;
-      height: 100%;
+      min-height: 100%;
       background-color: #121212;
       font-family: 'Space Mono', monospace;
       color: #F3ECDD;
       overflow-x: hidden;
     }
 
-    /* Contenedor principal que asegura que la imagen cubra toda la pantalla sin distorsión */
-    .workshop-hero {
+    /* ==========================================
+       VERSIÓN ESCRITORIO (Por defecto para pantallas > 768px)
+       ========================================== */
+    .desktop-version {
+      display: block;
       position: relative;
       width: 100vw;
       height: 100vh;
       overflow: hidden;
     }
 
-    /* Imagen real integrada para que ocupe y respete las proporciones exactas */
     .hero-bg-img {
       position: absolute;
       inset: 0;
@@ -45,7 +47,6 @@
       z-index: 1;
     }
 
-    /* Botonera superior estilo chapa/taller vintage */
     .top-nav {
       position: absolute;
       top: 24px;
@@ -78,11 +79,6 @@
       box-shadow: 4px 4px 0px #121212;
     }
 
-    .btn-garage:active {
-      transform: translate(2px, 2px);
-      box-shadow: 0px 0px 0px #121212;
-    }
-
     .btn-garage.cv-btn {
       background-color: #ffd100;
       color: #121212;
@@ -93,7 +89,6 @@
       color: #F3ECDD;
     }
 
-    /* Área inferior de texto de bienvenida */
     .hero-content {
       position: absolute;
       bottom: 50px;
@@ -134,48 +129,39 @@
       text-shadow: 2px 2px 4px #121212;
     }
 
-    /* Adaptabilidad específica para celulares y tablets (menos de 860px) */
-    @media (max-width: 860px) {
-      .workshop-hero {
-        height: 100dvh; /* Se adapta dinámicamente a la barra del navegador móvil */
+    /* Por defecto ocultamos la versión mobile en computadoras */
+    .mobile-version {
+      display: none;
+    }
+
+    /* ==========================================
+       VERSIÓN MÓVIL (Se activa en pantallas <= 768px)
+       ========================================== */
+    @media (max-width: 768px) {
+      .desktop-version {
+        display: none !important; /* Oculta la versión de escritorio */
       }
 
-      .hero-bg-img {
-        object-position: 32% center; /* Desplaza el encuadre en celular para mostrar al personaje y al auto */
-      }
-
-      .top-nav {
-        top: 16px;
-        right: 16px;
-        left: 16px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Botones ordenados en 2 columnas limpias */
-        gap: 6px;
-      }
-
-      .btn-garage {
-        font-size: 15px;
-        padding: 5px 8px;
-      }
-
-      .btn-garage.cv-btn {
-        grid-column: span 2; /* El botón de descarga de CV ocupa toda la fila inferior */
-      }
-
-      .hero-content {
-        bottom: 30px;
-        padding: 0 12px;
+      .mobile-version {
+        display: flex !important;
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        background: #30312D;
+        overflow-x: hidden;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 <body>
 
-  <main class="workshop-hero">
-    <!-- Imagen de fondo integrada como etiqueta HTML para evitar recortes de CSS -->
+  <!-- ================= VISTA ESCRITORIO ================= -->
+  <main class="desktop-version">
     <img src="taller.jpg" alt="Mi Taller de UX - Fondo" class="hero-bg-img">
 
-    <!-- Menú de navegación superior -->
     <nav class="top-nav">
       <a href="#sobre-mi" class="btn-garage">Sobre Mí</a>
       <a href="#proyectos" class="btn-garage">Proyectos</a>
@@ -185,7 +171,6 @@
       <a href="CV_Julia_UX.pdf" target="_blank" class="btn-garage cv-btn">Descarga Mi CV</a>
     </nav>
 
-    <!-- Tipografía central / inferior -->
     <section class="hero-content">
       <h1 class="hero-title">HOLA, SOY JULIA</h1>
       <p class="hero-subtitle">Diseño experiencias digitales claras, útiles y con impacto real</p>
@@ -193,5 +178,39 @@
     </section>
   </main>
 
-</body>
-</html>
+
+  <!-- ================= VISTA MÓVIL ================= -->
+  <div class="mobile-version">
+    <img style="width: 2775px; height: 1549px; left: -1400px; top: -565px; position: absolute" src="https://placehold.co/2775x1549" />
+    <div style="align-self: stretch; padding-bottom: 24px; padding-left: 24px; padding-right: 24px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+      <div style="align-self: stretch; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+        <div style="width: 166px; height: 48px; position: relative">
+          <div style="width: 166px; height: 43.27px; left: 0px; top: 4.73px; position: absolute; background: black"></div>
+          <div style="width: 166px; height: 43.27px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
+          <div style="width: 161.47px; height: 39.21px; left: 2.26px; top: 2.03px; position: absolute; background: #F3ECDD"></div>
+          <div style="width: 153.93px; height: 32.45px; left: 6.64px; top: 6px; position: absolute; background: #263B24"></div>
+          <div style="width: 146.76px; height: 26.03px; left: 9.62px; top: 8.62px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
+          <div style="width: 5.28px; height: 4.73px; left: 14.71px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
+          <div style="width: 1.51px; height: 1.35px; left: 15.85px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
+          <div style="width: 5.28px; height: 4.73px; left: 146px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
+          <div style="width: 1.51px; height: 1.35px; left: 147.14px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
+          <div style="width: 78.47px; height: 22.99px; left: 45.27px; top: 8.79px; position: absolute; opacity: 0.28; outline: 1px #F3ECDD solid; outline-offset: -0.50px"></div>
+          <div style="left: 31.54px; top: 9.60px; position: absolute; color: #F3ECDD; font-size: 18px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">sobre mi</div>
+        </div>
+        <div style="width: 166px; height: 48px; position: relative">
+          <div style="width: 166px; height: 43.27px; left: 0px; top: 4.73px; position: absolute; background: black"></div>
+          <div style="width: 166px; height: 43.27px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
+          <div style="width: 161.47px; height: 39.21px; left: 2.26px; top: 2.03px; position: absolute; background: #F3ECDD"></div>
+          <div style="width: 153.93px; height: 32.45px; left: 6.64px; top: 6px; position: absolute; background: #263B24"></div>
+          <div style="width: 146.76px; height: 26.03px; left: 9.62px; top: 8.62px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
+          <div style="width: 5.28px; height: 4.73px; left: 14.71px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
+          <div style="width: 1.51px; height: 1.35px; left: 15.85px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
+          <div style="width: 5.28px; height: 4.73px; left: 146px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
+          <div style="width: 1.51px; height: 1.35px; left: 147.14px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
+          <div style="width: 78.47px; height: 22.99px; left: 45.27px; top: 8.79px; position: absolute; opacity: 0.28; outline: 1px #F3ECDD solid; outline-offset: -0.50px"></div>
+          <div style="left: 31.54px; top: 9.60px; position: absolute; color: #F3ECDD; font-size: 18px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">proyectos</div>
+        </div>
+      </div>
+      <div style="align-self: stretch; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+        <div style="width: 166px; height: 48px; position: relative">
+          <div style="width: 166px; height: 43.27px; left: 0px; top: 4.73px; position
