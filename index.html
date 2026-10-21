@@ -23,22 +23,18 @@
       background-color: #121212;
       font-family: 'Space Mono', monospace;
       color: #F3ECDD;
-      overflow: hidden;
+      scroll-behavior: smooth; /* Hace que el desplazamiento al hacer clic sea suave */
     }
 
-    /* ==========================================
-       PORTADA PRINCIPAL
-       ========================================== */
-    .workshop-hero {
+    /* Cada sección ocupa una pantalla completa (100vh) */
+    .section-screen {
       position: relative;
       width: 100vw;
       height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      overflow: hidden;
     }
 
-    .hero-bg-img {
+    .screen-bg {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -48,6 +44,9 @@
       z-index: 1;
     }
 
+    /* ==========================================
+       SECCIÓN 1: HOME / PORTADA
+       ========================================== */
     .top-nav {
       position: absolute;
       top: 24px;
@@ -95,6 +94,7 @@
       max-width: 900px;
       padding: 0 20px;
       z-index: 10;
+      pointer-events: none;
     }
 
     .hero-title {
@@ -126,67 +126,7 @@
     }
 
     /* ==========================================
-       MODAL / SECCIÓN INTERACTIVA "SOBRE MÍ"
-       ========================================== */
-    .about-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #121212;
-      z-index: 100;
-    }
-
-    .about-modal.active {
-      display: block;
-    }
-
-    .about-screen {
-      display: none;
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .about-screen.active {
-      display: block;
-    }
-
-    .screen-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-    }
-
-    /* Botón de cierre superior izquierdo */
-    .back-to-home {
-      position: absolute;
-      top: 20px;
-      left: 30px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #F3ECDD;
-      border: 1px solid #777;
-      padding: 6px 16px;
-      font-family: 'Space Mono', monospace;
-      font-size: 14px;
-      cursor: pointer;
-      z-index: 200;
-      border-radius: 4px;
-      transition: background 0.2s;
-    }
-
-    .back-to-home:hover {
-      background: #d62828;
-      border-color: #d62828;
-    }
-
-    /* ==========================================
-       ANIMACIONES PARA EL GLOBO Y TEXTO
+       SECCIONES "SOBRE MÍ" (PANTALLAS 1, 2 y 3)
        ========================================== */
     @keyframes popIn {
       0% {
@@ -201,34 +141,28 @@
 
     .dialog-box {
       position: absolute;
-      top: 80px;
-      left: 240px;
-      width: 420px;
+      top: 100px;
+      left: 200px;
+      width: 450px;
       padding: 35px 40px;
       background: #F3ECDD;
       border: 3px solid #121212;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Forma orgánica de globo */
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
       text-align: center;
       color: #121212;
       font-size: 15px;
       line-height: 1.5;
       box-shadow: 6px 6px 0px rgba(0,0,0,0.8);
-      z-index: 50;
-      
-      /* Animación al ingresar a la pantalla */
+      z-index: 10;
       animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-      
-      /* Transición fluida para el hover */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Efecto Hover dinámico */
     .dialog-box:hover {
       transform: scale(1.03);
       box-shadow: 8px 8px 0px #FFD100;
     }
 
-    /* Botones de navegación inferior para cambiar de pantalla */
     .nav-buttons {
       position: absolute;
       bottom: 40px;
@@ -236,7 +170,7 @@
       transform: translateX(-50%);
       display: flex;
       gap: 15px;
-      z-index: 50;
+      z-index: 10;
     }
 
     .action-btn {
@@ -250,6 +184,7 @@
       cursor: pointer;
       box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
       transition: all 0.2s ease;
+      text-decoration: none;
     }
 
     .action-btn:hover {
@@ -261,12 +196,12 @@
 </head>
 <body>
 
-  <!-- ================= PORTADA PRINCIPAL ================= -->
-  <main id="homeView" class="workshop-hero">
-    <img src="taller.jpg" alt="Mi Taller de UX - Fondo" class="hero-bg-img">
+  <!-- ================= SECCIÓN 1: HOME ================= -->
+  <section id="home" class="section-screen">
+    <img src="taller.jpg" alt="Mi Taller de UX - Fondo" class="screen-bg">
 
     <nav class="top-nav">
-      <button id="btnSobreMi" class="btn-garage">Sobre Mí</button>
+      <a href="#sobremi-1" class="btn-garage">Sobre Mí</a>
       <a href="#proyectos" class="btn-garage">Proyectos</a>
       <a href="#prototipos" class="btn-garage">Prototipos</a>
       <a href="#dis-grafico" class="btn-garage">Dis. Gráfico</a>
@@ -279,76 +214,53 @@
       <p class="hero-subtitle">Diseño experiencias digitales claras, útiles y con impacto real</p>
       <p class="hero-tagline">Adelante, este es mi taller...</p>
     </section>
-  </main>
+  </section>
 
 
-  <!-- ================= HISTORIA INTERACTIVA / PANTALLAS "SOBRE MÍ" ================= -->
-  <div id="aboutModal" class="about-modal">
-    <button id="btnClose" class="back-to-home">← Volver al inicio</button>
-
-    <!-- PANTALLA 1 -->
-    <div class="about-screen active" id="screen-1">
-      <img src="taller.jpg" alt="Fondo taller" class="screen-bg">
-      <div class="dialog-box">
-        ¡Hola, soy Julia!<br>
-        Te doy la bienvenida a mi taller.<br>
-        Diseño experiencias digitales claras y útiles. Pasá y te cuento un poco sobre mí.
-      </div>
-      <div class="nav-buttons">
-        <button class="action-btn" onclick="showScreen(2)">Siguiente →</button>
-      </div>
+  <!-- ================= SECCIÓN SOBRE MÍ (PANTALLA 1) ================= -->
+  <section id="sobremi-1" class="section-screen">
+    <img src="sobremi-1.jpg" alt="Sobre mi pantalla 1" class="screen-bg">
+    
+    <div class="dialog-box">
+      ¡Hola, soy Julia!<br>
+      Te doy la bienvenida a mi taller.<br>
+      Diseño experiencias digitales claras y útiles. Pasá y te cuento un poco sobre mí.
     </div>
 
-    <!-- PANTALLA 2 -->
-    <div class="about-screen" id="screen-2">
-      <img src="taller.jpg" alt="Fondo taller" class="screen-bg">
-      <div class="dialog-box">
-        Egresé de una técnica en mecánica y pasé por Diseño Industrial. Ahí descubrí que me gusta que las cosas funcionen y se vean bien. Hoy lo hago con experiencias digitales.
-      </div>
-      <div class="nav-buttons">
-        <button class="action-btn" onclick="showScreen(1)">← Volver</button>
-        <button class="action-btn" onclick="showScreen(3)">Siguiente →</button>
-      </div>
+    <div class="nav-buttons">
+      <a href="#sobremi-2" class="action-btn">Siguiente →</a>
+    </div>
+  </section>
+
+
+  <!-- ================= SECCIÓN SOBRE MÍ (PANTALLA 2) ================= -->
+  <section id="sobremi-2" class="section-screen">
+    <img src="sobremi-2.jpg" alt="Sobre mi pantalla 2" class="screen-bg">
+    
+    <div class="dialog-box">
+      Egresé de una técnica en mecánica y pasé por Diseño Industrial. Ahí descubrí que me gusta que las cosas funcionen y se vean bien. Hoy lo hago con experiencias digitales.
     </div>
 
-    <!-- PANTALLA 3 -->
-    <div class="about-screen" id="screen-3">
-      <img src="taller.jpg" alt="Fondo taller" class="screen-bg">
-      <div class="dialog-box">
-        Lo mío es que lo complejo se sienta simple: pruebo, ajusto y vuelvo a probar, como en un taller. Por eso mi portfolio es uno. Entre prueba y prueba: buena música, autos clásicos y mate.
-      </div>
-      <div class="nav-buttons">
-        <button class="action-btn" onclick="showScreen(2)">← Volver</button>
-      </div>
+    <div class="nav-buttons">
+      <a href="#sobremi-1" class="action-btn">← Volver</a>
+      <a href="#sobremi-3" class="action-btn">Siguiente →</a>
     </div>
-  </div>
+  </section>
 
 
-  <!-- ================= SCRIPT DE INTERACCIÓN ================= -->
-  <script>
-    const homeView = document.getElementById('homeView');
-    const aboutModal = document.getElementById('aboutModal');
-    const btnSobreMi = document.getElementById('btnSobreMi');
-    const btnClose = document.getElementById('btnClose');
-    const screens = document.querySelectorAll('.about-screen');
+  <!-- ================= SECCIÓN SOBRE MÍ (PANTALLA 3) ================= -->
+  <section id="sobremi-3" class="section-screen">
+    <img src="sobremi-3.jpg" alt="Sobre mi pantalla 3" class="screen-bg">
+    
+    <div class="dialog-box">
+      Lo mío es que lo complejo se sienta simple: pruebo, ajusto y vuelvo a probar, como en un taller. Por eso mi portfolio es uno. Entre prueba y prueba: buena música, autos clásicos y mate.
+    </div>
 
-    let currentScreen = 1;
-
-    btnSobreMi.addEventListener('click', () => {
-      aboutModal.classList.add('active');
-      showScreen(1);
-    });
-
-    btnClose.addEventListener('click', () => {
-      aboutModal.classList.remove('active');
-    });
-
-    function showScreen(num) {
-      screens.forEach(s => s.classList.remove('active'));
-      document.getElementById('screen-' + num).classList.add('active');
-      currentScreen = num;
-    }
-  </script>
+    <div class="nav-buttons">
+      <a href="#sobremi-2" class="action-btn">← Volver</a>
+      <a href="#home" class="action-btn">Volver al inicio ⇧</a>
+    </div>
+  </section>
 
 </body>
 </html>
