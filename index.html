@@ -683,35 +683,35 @@
                         <span class="font-mono text-xs text-carrera bg-asfaltoLight px-2.5 py-1 rounded">FORMULARIO #79</span>
                     </div>
 
-<form id="contact-form" action="https://formspree.io/f/mbgdnpqw" method="POST" class="space-y-4">
-                        <div>
-                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Nombre / Empresa *</label>
-                            <input type="text" id="client-name" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Ej. Juan Pérez (Startup Tech)">
-                        </div>
+<form action="https://formspree.io/f/mbgdnpqw" method="POST" class="space-y-4">
+    <div>
+        <label class="block font-mono text-xs text-cromo uppercase mb-1">Nombre / Empresa *</label>
+        <input type="text" name="nombre" id="client-name" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Ej. Juan Pérez (Startup Tech)">
+    </div>
 
-                        <div>
-                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Correo Electrónico *</label>
-                            <input type="email" id="client-email" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="ejemplo@email.com">
-                        </div>
+    <div>
+        <label class="block font-mono text-xs text-cromo uppercase mb-1">Correo Electrónico *</label>
+        <input type="email" name="email" id="client-email" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="ejemplo@email.com">
+    </div>
 
-                        <div>
-                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Tipo de Servicio *</label>
-                            <select id="service-type" class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans">
-                                <option value="ux-design">Contacto con el taller</option>
-                                <option value="conversational">Coordinar una meet para conocernos</option>
-                                <option value="design-system">Enviar solo una consulta</option>
-                            </select>
-                        </div>
+    <div>
+        <label class="block font-mono text-xs text-cromo uppercase mb-1">Tipo de Servicio *</label>
+        <select name="servicio" id="service-type" class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans">
+            <option value="Contacto con el taller">Contacto con el taller</option>
+            <option value="Coordinar meet">Coordinar una meet para conocernos</option>
+            <option value="Enviar consulta">Enviar solo una consulta</option>
+        </select>
+    </div>
 
-                        <div>
-                            <label class="block font-mono text-xs text-cromo uppercase mb-1">Detalles*</label>
-                            <textarea id="client-message" rows="4" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Describí brevemente qué objetivo querés lograr o qué problema tiene tu plataforma..."></textarea>
-                        </div>
+    <div>
+        <label class="block font-mono text-xs text-cromo uppercase mb-1">Detalles *</label>
+        <textarea name="mensaje" id="client-message" rows="4" required class="w-full bg-asfalto border border-asfaltoLight rounded p-3 text-hueso focus:border-carrera focus:outline-none font-sans" placeholder="Describí brevemente qué objetivo querés lograr o qué problema tiene tu plataforma..."></textarea>
+    </div>
 
-                        <button type="submit" class="w-full bg-carrera hover:bg-hueso text-asfalto font-bebas text-2xl py-3.5 rounded transition uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> ENVIAR ORDEN A TALLER
-                        </button>
-                    </form>
+    <button type="submit" class="w-full bg-carrera hover:bg-hueso text-asfalto font-bebas text-2xl py-3.5 rounded transition uppercase tracking-wider shadow-lg flex items-center justify-center gap-2">
+        <i class="fa-solid fa-paper-plane"></i> ENVIAR ORDEN A TALLER
+    </button>
+</form>
                 </div>
 
                 <!-- Contact Info & Resume Download -->
