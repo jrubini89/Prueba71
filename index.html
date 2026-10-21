@@ -50,4 +50,122 @@
       z-index: 10;
     }
 
-    /* Botones estilo chapa/
+    /* Botones estilo chapa/taller vintage */
+    .btn-garage {
+      background-color: #cfd8c7;
+      color: #1c2619;
+      border: 2px solid #232b20;
+      padding: 6px 14px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 19px;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      box-shadow: 2px 2px 0px #121212;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+    }
+
+    .btn-garage:hover {
+      background-color: #ffd100;
+      color: #121212;
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px #121212;
+    }
+
+    .btn-garage:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0px 0px 0px #121212;
+    }
+
+    /* Botón destacado CV */
+    .btn-garage.cv-btn {
+      background-color: #ffd100;
+      color: #121212;
+    }
+
+    .btn-garage.cv-btn:hover {
+      background-color: #d62828;
+      color: #F3ECDD;
+    }
+
+    /* Área inferior de texto de bienvenida */
+    .hero-content {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 100%;
+      max-width: 900px;
+      padding: 0 20px;
+      pointer-events: none;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(60px, 9vw, 110px);
+      line-height: 0.95;
+      letter-spacing: 0.05em;
+      color: #F3ECDD;
+      text-shadow: 4px 4px 0px #121212, 0 0 20px rgba(0,0,0,0.8);
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(12px, 1.3vw, 16px);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #F3ECDD;
+      text-shadow: 2px 2px 4px #121212;
+      margin-bottom: 6px;
+    }
+
+    .hero-tagline {
+      font-size: clamp(11px, 1.1vw, 14px);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #ffd100;
+      text-shadow: 2px 2px 4px #121212;
+    }
+
+    /* Adaptabilidad básica */
+    @media (max-width: 860px) {
+      .top-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 16px;
+      }
+      .btn-garage {
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+      .hero-content {
+        bottom: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="workshop-hero">
+    <!-- Menú de navegación superior -->
+    <nav class="top-nav">
+      <a href="#sobre-mi" class="btn-garage">Sobre Mí</a>
+      <a href="#proyectos" class="btn-garage">Proyectos</a>
+      <a href="#prototipos" class="btn-garage">Prototipos</a>
+      <a href="#dis-grafico" class="btn-garage">Dis. Gráfico</a>
+      <a href="#contacto" class="btn-garage">Contacto</a>
+      <a href="CV_Julia_UX.pdf" target="_blank" class="btn-garage cv-btn">Descarga Mi CV</a>
+    </nav>
+
+    <!-- Tipografía central / inferior -->
+    <section class="hero-content">
+      <h1 class="hero-title">HOLA, SOY JULIA</h1>
+      <p class="hero-subtitle">Diseño experiencias digitales claras, útiles y con impacto real</p>
+      <p class="hero-tagline">Adelante, este es mi taller...</p>
+    </section>
+  </main>
+
+</body>
+</html>
