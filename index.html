@@ -449,7 +449,120 @@
 
             </div>
         </section>
+<!-- ========================================== -->
+<!-- SECCIÓN: CINTA EN MOVIMIENTO - DISEÑO GRÁFICO & PROTOTIPOS -->
+<!-- ========================================== -->
+<section class="py-16 overflow-hidden bg-asfaltoCard border-y-2 border-carrera/20 relative">
+    <!-- Encabezado de la sección -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 mb-8 text-center">
+        <span class="text-carrera font-mono text-xs uppercase tracking-widest block mb-1">// LABORATORIO VISUAL & TALLER DE PINTURA</span>
+        <h3 class="font-bebas text-3xl sm:text-5xl text-hueso tracking-wider">PIEZAS EN ROTACIÓN & PROTOTIPOS</h3>
+        <p class="text-xs sm:text-sm text-cromo font-mono mt-1">Línea de montaje en movimiento constante. Pasá el cursor para pausar e inspeccionar.</p>
+    </div>
 
+    <!-- Contenedor con leve rotación diagonal -->
+    <div class="transform -rotate-2 scale-105 py-4 bg-asfalto/50 border-y border-carrera/30">
+        
+        <!-- Marquee Track (Carrusel infinito automático) -->
+        <div class="flex w-max animate-marquee space-x-6 hover:[animation-play-state:paused]">
+            
+            <!-- GRUPO 1 DE TARJETAS -->
+            <div class="flex space-x-6 shrink-0">
+                
+                <!-- Item 1: Diseño Gráfico / Branding -->
+                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600" alt="Branding Taller" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-mono text-carrera font-bold">BRANDING // IDENTIDAD VISUAL</span>
+                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Sistema Gráfico "El Taller"</h4>
+                    </div>
+                </div>
+
+                <!-- Item 2: Prototipo Figma / UI -->
+                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=600" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-mono text-falcon font-bold">UI/UX // FIGMA PROTOTYPE</span>
+                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Flujos Complejos & Wireflows</h4>
+                    </div>
+                </div>
+
+                <!-- Item 3: Diseño Conversacional / Chatbot -->
+                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-mono text-pits font-bold">BOTMAKER // GEN AI & MCP</span>
+                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Árboles de Autogestión LATAM</h4>
+                    </div>
+                </div>
+
+                <!-- Item 4: Ilustración / Afiche Vintage -->
+                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="Ilustración Vectorial" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-mono text-carrera font-bold">ILUSTRACIÓN // VECTORIAL</span>
+                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Estética Automotriz & Badges</h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- GRUPO 2 (Duplicado exacto para lograr el loop infinito perfecto sin saltos) -->
+            <div class="flex space-x-6 shrink-0" aria-hidden="true">
+                
+                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600" alt="Branding Taller" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-mono text-carrera font-bold">BRANDING // IDENTIDAD VISUAL</span>
+                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Sistema Gráfico "El Taller"</h4>
+                    </div>
+                </div>
+
+                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=600" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-mono text-falcon font-bold">UI/UX // FIGMA PROTOTYPE</span>
+                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Flujos Complejos & Wireflows</h4>
+                    </div>
+                </div>
+
+                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-mono text-pits font-bold">BOTMAKER // GEN AI & MCP</span>
+                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Árboles de Autogestión LATAM</h4>
+                    </div>
+                </div>
+
+                <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="Ilustración Vectorial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                        <span class="text-[10px] font-mono text-carrera font-bold">ILUSTRACIÓN // VECTORIAL</span>
+                        <h4 class="font-bebas text-xl text-hueso tracking-wide">Estética Automotriz & Badges</h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========================================== -->
+<!-- ESTILOS CSS PARA LA ANIMACIÓN CONTINUA     -->
+<!-- ========================================== -->
+<style>
+    @keyframes marquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 25s linear infinite;
+    }
+</style>
 
         <!-- ========================================== -->
         <!-- SECTION 4: CONTACTO & RECEPCIÓN            -->
