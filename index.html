@@ -186,9 +186,9 @@
                     </div>
                     <div>
                         <h3 class="font-bebas text-3xl text-hueso tracking-wider">JULIA RUBINI</h3>
-                        <p class="text-xs font-mono text-cromo">Senior UX Designer & QA Specialist</p>
+                        <p class="text-xs font-mono text-cromo">Senior UX Designer</p>
                     </div>
-                    <div class="pt-2 border-t border-asfaltoLight flex justify-around text-center font-mono text-xs">
+                    <div class="pt-2 border-t border-asfaltoLight flex justify-between text-center font-mono text-xs">
                         <div>
                             <span class="text-carrera font-bold block text-lg">~4 AÑOS</span>
                             <span class="text-cromo">En Pista</span>
@@ -211,7 +211,126 @@
             </div>
         </section>
 
-        <!-- SECTION 2: CASOS DE ESTUDIO -->
+         <!-- SECTION 2: FICHA TÉCNICA & CARRUSEL (SOBRE MÍ) -->
+        <section id="experiencia" class="space-y-12 scroll-mt-24">
+            <div class="border-b border-asfaltoLight pb-6">
+                <div class="flex items-center gap-2 text-falcon font-mono text-xs uppercase mb-1">
+                    <i class="fa-solid fa-id-card-clip"></i> LEGAJO PROFESIONAL & FICHA TÉCNICA
+                </div>
+                <h2 class="font-bebas text-4xl sm:text-6xl text-hueso tracking-wider">EL MECÁNICO: TRAYECTORIA & FICHA TÉCNICA</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column: Clipboard / Ficha Técnica & Carrusel -->
+                <div class="lg:col-span-6 flex justify-center w-full">
+                    <div class="clipboard-paper w-full max-w-md rounded-lg p-6 sm:p-8 space-y-6 text-asfalto border border-stone-300 relative">
+                        <!-- Clip top element -->
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-stone-700 rounded border-2 border-stone-800 shadow flex items-center justify-center">
+                            <div class="w-4 h-4 rounded-full bg-stone-900 border border-stone-500"></div>
+                        </div>
+
+                        <div class="text-center pt-2 border-b-2 border-stone-300 pb-4">
+                            <h3 class="font-mono font-bold text-lg tracking-widest text-stone-900">FICHA TÉCNICA</h3>
+                            <p class="font-mono text-xs text-stone-600">Julia Rubini</p>
+                        </div>
+
+                        <div class="font-mono text-xs space-y-2.5 text-stone-800 leading-relaxed">
+                            <p><strong>Modelo:</strong> hija de mecánico y familia de corredores</p>
+                            <p><strong>Fabricación:</strong> Córdoba, Argentina</p>
+                            <p><strong>Motor:</strong> pasión por los autos y la música</p>
+                            <p><strong>Combustible:</strong> mate, siempre caliente</p>
+                            <p><strong>Banda sonora:</strong> heavy metal y, en mis ratos libres, guitarra eléctrica con mi banda</p>
+                            <p><strong>Ídolo en pista:</strong> Ayrton Senna</p>
+                            <p><strong>Copiloto oficial:</strong> mi hijo Fermín</p>
+                            <p><strong>Cable a tierra:</strong> ruta en mi clásico del 71</p>
+                        </div>
+
+                        <!-- PHOTO CAROUSEL INSIDE THE CLIPBOARD -->
+                        <div class="pt-4 border-t-2 border-stone-300 space-y-3">
+                            <div class="relative w-full h-64 rounded bg-stone-900 overflow-hidden shadow-inner group">
+                                <!-- Slides -->
+                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-100" style="opacity: 1; z-index: 10; pointer-events: auto;">
+                                    <img src="CARRU4.jpg" alt="Julia Rubini" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/FFD100?text=Julia+Rubini'">
+                                </div>
+                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" style="opacity: 0; z-index: 1; pointer-events: none;">
+                                    <img src="CARRU1.jpg" alt="Julia Rubini" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/FFD100?text=Julia+Rubini'">
+                                </div>
+                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" style="opacity: 0; z-index: 1; pointer-events: none;">
+                                    <img src="CARRU 3.jpeg" alt="Ford Falcon Clásico" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/3E5C3A?text=Ford+Falcon+71'">
+                                </div>
+                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" style="opacity: 0; z-index: 1; pointer-events: none;">
+                                    <img src="CARRU 2.jpeg" alt="Ruta al atardecer" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/D62828?text=Ruta+Ruta+71'">
+                                </div>
+
+                                <!-- Carousel Controls -->
+                                <button type="button" onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/80 hover:bg-carrera hover:text-asfalto text-white w-9 h-9 flex items-center justify-center rounded-full text-xs transition shadow-lg cursor-pointer z-20 border border-white/30">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <button type="button" onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/80 hover:bg-carrera hover:text-asfalto text-white w-9 h-9 flex items-center justify-center rounded-full text-xs transition shadow-lg cursor-pointer z-20 border border-white/30">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+
+                                <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 rounded text-[10px] text-carrera font-mono tracking-wider z-20 border border-white/20">
+                                    <span id="slide-indicator">1 / 4</span> • Archivo
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Column: Experience Timeline & Toolbox -->
+                <div class="lg:col-span-6 space-y-8">
+                    <div class="bg-asfaltoCard border-2 border-asfaltoLight rounded-xl p-6 sm:p-8 space-y-6">
+                        <h3 class="font-bebas text-3xl text-hueso border-b border-asfaltoLight pb-3 flex items-center gap-2 tracking-wide">
+                            <i class="fa-solid fa-timeline text-carrera"></i> TRAYECTORIA EN PISTA
+                        </h3>
+                        <div class="space-y-6">
+                            <!-- Job 1 -->
+                            <div class="border-l-2 border-carrera pl-4 space-y-1 relative">
+                                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-carrera border-2 border-asfalto"></div>
+                                <span class="font-mono text-xs text-carrera font-bold">07/2026 — PRESENTE</span>
+                                <h4 class="font-bebas text-2xl text-hueso tracking-wide">Accenture: Senior UX — Sector Seguros</h4>
+                                <p class="text-sm text-cromo">Investigación de necesidades, usabilidad y optimización de experiencias digitales corporativas.</p>
+                            </div>
+                            <!-- Job 2 -->
+                            <div class="border-l-2 border-falcon pl-4 space-y-1 relative">
+                                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-falcon border-2 border-asfalto"></div>
+                                <span class="font-mono text-xs text-falcon font-bold">08/2024 - 05/2026</span>
+                                <h4 class="font-bebas text-2xl text-hueso tracking-wide">Accenture: Senior Conversational UX - E-commerce & Fintech</h4>
+                                <p class="text-sm text-cromo">Liderazgo del bot conversacional en 9 países, más de 100 flujos y reducción del 90% en escalaciones.</p>
+                            </div>
+                            <!-- Job 3 -->
+                            <div class="border-l-2 border-pits pl-4 space-y-1 relative">
+                                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-pits border-2 border-asfalto"></div>
+                                <span class="font-mono text-xs text-pits font-bold">11/2022 — 08/2024</span>
+                                <h4 class="font-bebas text-2xl text-hueso tracking-wide">Accenture: QA Engineering Associate - Sector Bancario</h4>
+                                <p class="text-sm text-cromo">Pruebas funcionales, regresión en apps web y back-end (Cobol) con BDD (Gherkin).</p>
+                            </div>
+                            <!-- Job 4 -->
+                            <div class="border-l-2 border-carrera pl-4 space-y-1 relative">
+                                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-carrera border-2 border-asfalto"></div>
+                                <span class="font-mono text-xs text-carrera font-bold">10/2022 — 11/2022</span>
+                                <h4 class="font-bebas text-2xl text-hueso tracking-wide">Zephia Digital : UX Designer Freelance</h4>
+                                <p class="text-sm text-cromo">Diseño de pantallas para página web e interfaz CRM, entrevista con usuarios, pruebas, UI Kits</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toolbox -->
+                    <div class="bg-asfaltoCard border-2 border-asfaltoLight rounded-xl p-6 sm:p-8 space-y-4">
+                        <h3 class="font-bebas text-2xl text-hueso border-b border-asfaltoLight pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-toolbox text-falcon"></i> CAJA DE HERRAMIENTAS
+                        </h3>
+                        <p class="text-xs text-cromo font-sans">Figma, FigJam, Adobe Photoshop & Illustrator, Corel Draw, Sharepoint, Botmaker, Herramientas de IA, Design Systems, Azure DevOps, Jira, Gherkin, Prompt Engineering y metodologías Ágiles.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: CASOS DE ESTUDIO -->
         <section id="casos" class="space-y-10 scroll-mt-24">
             <div class="border-b border-asfaltoLight pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
@@ -334,124 +453,7 @@
             </div>
         </section>
 
-        <!-- SECTION 3: FICHA TÉCNICA & CARRUSEL (SOBRE MÍ) -->
-        <section id="experiencia" class="space-y-12 scroll-mt-24">
-            <div class="border-b border-asfaltoLight pb-6">
-                <div class="flex items-center gap-2 text-falcon font-mono text-xs uppercase mb-1">
-                    <i class="fa-solid fa-id-card-clip"></i> LEGAJO PROFESIONAL & FICHA TÉCNICA
-                </div>
-                <h2 class="font-bebas text-4xl sm:text-6xl text-hueso tracking-wider">EL MECÁNICO: TRAYECTORIA & FICHA TÉCNICA</h2>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Left Column: Clipboard / Ficha Técnica & Carrusel -->
-                <div class="lg:col-span-6 flex justify-center w-full">
-                    <div class="clipboard-paper w-full max-w-md rounded-lg p-6 sm:p-8 space-y-6 text-asfalto border border-stone-300 relative">
-                        <!-- Clip top element -->
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-stone-700 rounded border-2 border-stone-800 shadow flex items-center justify-center">
-                            <div class="w-4 h-4 rounded-full bg-stone-900 border border-stone-500"></div>
-                        </div>
-
-                        <div class="text-center pt-2 border-b-2 border-stone-300 pb-4">
-                            <h3 class="font-mono font-bold text-lg tracking-widest text-stone-900">FICHA TÉCNICA</h3>
-                            <p class="font-mono text-xs text-stone-600">Julia Rubini</p>
-                        </div>
-
-                        <div class="font-mono text-xs space-y-2.5 text-stone-800 leading-relaxed">
-                            <p><strong>Modelo:</strong> hija de mecánico y familia de corredores</p>
-                            <p><strong>Fabricación:</strong> Córdoba, Argentina</p>
-                            <p><strong>Motor:</strong> pasión por los autos y la música</p>
-                            <p><strong>Combustible:</strong> mate, siempre caliente</p>
-                            <p><strong>Banda sonora:</strong> heavy metal y, en mis ratos libres, guitarra eléctrica con mi banda</p>
-                            <p><strong>Ídolo en pista:</strong> Ayrton Senna</p>
-                            <p><strong>Copiloto oficial:</strong> mi hijo Fermín</p>
-                            <p><strong>Cable a tierra:</strong> ruta en mi clásico del 71</p>
-                        </div>
-
-                        <!-- PHOTO CAROUSEL INSIDE THE CLIPBOARD -->
-                        <div class="pt-4 border-t-2 border-stone-300 space-y-3">
-                            <div class="relative w-full h-64 rounded bg-stone-900 overflow-hidden shadow-inner group">
-                                <!-- Slides -->
-                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-100" style="opacity: 1; z-index: 10; pointer-events: auto;">
-                                    <img src="CARRU4.jpg" alt="Julia Rubini" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/FFD100?text=Julia+Rubini'">
-                                </div>
-                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" style="opacity: 0; z-index: 1; pointer-events: none;">
-                                    <img src="CARRU1.jpg" alt="Julia Rubini" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/FFD100?text=Julia+Rubini'">
-                                </div>
-                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" style="opacity: 0; z-index: 1; pointer-events: none;">
-                                    <img src="CARRU 3.jpeg" alt="Ford Falcon Clásico" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/3E5C3A?text=Ford+Falcon+71'">
-                                </div>
-                                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" style="opacity: 0; z-index: 1; pointer-events: none;">
-                                    <img src="CARRU 2.jpeg" alt="Ruta al atardecer" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/D62828?text=Ruta+Ruta+71'">
-                                </div>
-
-                                <!-- Carousel Controls -->
-                                <button type="button" onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/80 hover:bg-carrera hover:text-asfalto text-white w-9 h-9 flex items-center justify-center rounded-full text-xs transition shadow-lg cursor-pointer z-20 border border-white/30">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </button>
-                                <button type="button" onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/80 hover:bg-carrera hover:text-asfalto text-white w-9 h-9 flex items-center justify-center rounded-full text-xs transition shadow-lg cursor-pointer z-20 border border-white/30">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </button>
-
-                                <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/80 px-3 py-1 rounded text-[10px] text-carrera font-mono tracking-wider z-20 border border-white/20">
-                                    <span id="slide-indicator">1 / 4</span> • Archivo
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Right Column: Experience Timeline & Toolbox -->
-                <div class="lg:col-span-6 space-y-8">
-                    <div class="bg-asfaltoCard border-2 border-asfaltoLight rounded-xl p-6 sm:p-8 space-y-6">
-                        <h3 class="font-bebas text-3xl text-hueso border-b border-asfaltoLight pb-3 flex items-center gap-2 tracking-wide">
-                            <i class="fa-solid fa-timeline text-carrera"></i> TRAYECTORIA EN PISTA
-                        </h3>
-                        <div class="space-y-6">
-                            <!-- Job 1 -->
-                            <div class="border-l-2 border-carrera pl-4 space-y-1 relative">
-                                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-carrera border-2 border-asfalto"></div>
-                                <span class="font-mono text-xs text-carrera font-bold">07/2026 — PRESENTE</span>
-                                <h4 class="font-bebas text-2xl text-hueso tracking-wide">Accenture: Senior UX — Sector Seguros</h4>
-                                <p class="text-sm text-cromo">Investigación de necesidades, usabilidad y optimización de experiencias digitales corporativas.</p>
-                            </div>
-                            <!-- Job 2 -->
-                            <div class="border-l-2 border-falcon pl-4 space-y-1 relative">
-                                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-falcon border-2 border-asfalto"></div>
-                                <span class="font-mono text-xs text-falcon font-bold">08/2024 - 05/2026</span>
-                                <h4 class="font-bebas text-2xl text-hueso tracking-wide">Accenture: Senior Conversational UX - E-commerce & Fintech</h4>
-                                <p class="text-sm text-cromo">Liderazgo del bot conversacional en 9 países, más de 100 flujos y reducción del 90% en escalaciones.</p>
-                            </div>
-                            <!-- Job 3 -->
-                            <div class="border-l-2 border-pits pl-4 space-y-1 relative">
-                                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-pits border-2 border-asfalto"></div>
-                                <span class="font-mono text-xs text-pits font-bold">11/2022 — 08/2024</span>
-                                <h4 class="font-bebas text-2xl text-hueso tracking-wide">Accenture: QA Engineering Associate - Sector Bancario</h4>
-                                <p class="text-sm text-cromo">Pruebas funcionales, regresión en apps web y back-end (Cobol) con BDD (Gherkin).</p>
-                            </div>
-                            <!-- Job 4 -->
-                            <div class="border-l-2 border-carrera pl-4 space-y-1 relative">
-                                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-carrera border-2 border-asfalto"></div>
-                                <span class="font-mono text-xs text-carrera font-bold">10/2022 — 11/2022</span>
-                                <h4 class="font-bebas text-2xl text-hueso tracking-wide">Zephia Digital : UX Designer Freelance</h4>
-                                <p class="text-sm text-cromo">Diseño de pantallas para página web e interfaz CRM, entrevista con usuarios, pruebas, UI Kits</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Toolbox -->
-                    <div class="bg-asfaltoCard border-2 border-asfaltoLight rounded-xl p-6 sm:p-8 space-y-4">
-                        <h3 class="font-bebas text-2xl text-hueso border-b border-asfaltoLight pb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-toolbox text-falcon"></i> CAJA DE HERRAMIENTAS
-                        </h3>
-                        <p class="text-xs text-cromo font-sans">Figma, FigJam, Adobe Photoshop & Illustrator, Corel Draw, Sharepoint, Botmaker, Herramientas de IA, Design Systems, Azure DevOps, Jira, Gherkin, Prompt Engineering y metodologías Ágiles.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+    
 
         <!-- SECTION: CINTA EN MOVIMIENTO -->
         <section class="py-16 overflow-hidden bg-asfaltoCard border-y-2 border-carrera/20 relative">
