@@ -454,7 +454,7 @@
                         <h3 class="font-bebas text-2xl text-hueso border-b border-asfaltoLight pb-2 flex items-center gap-2">
                             <i class="fa-solid fa-toolbox text-falcon"></i> CAJA DE HERRAMIENTAS
                         </h3>
-                        <p class="text-xs text-cromo font-sans">Figma, FigJam, Botmaker (Gen AI, MCP), Design Systems, Azure DevOps, Jira, Cypress, BDD con Gherkin, Prompt Engineering y metodologías Ágiles.</p>
+                        <p class="text-xs text-cromo font-sans">Figma, FigJam, Adobe Photoshop & Illustrator, Corel Draw, Sharepoint, Botmaker, Herramientas de IA, Design Systems, Azure DevOps, Jira, Gherkin, Prompt Engineering y metodologías Ágiles.</p>
                     </div>
                 </div>
 
@@ -899,24 +899,36 @@
         }
 
         // Photo Carousel Logic
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicator = document.getElementById('slide-indicator');
+// --- LÓGICA DEL CARRUSEL DE FOTOS ---
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const totalSlides = slides.length;
+const slideIndicator = document.getElementById('slide-indicator');
 
-        function updateCarousel() {
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.remove('opacity-0');
-                    slide.classList.add('opacity-100');
-                } else {
-                    slide.classList.remove('opacity-100');
-                    slide.classList.add('opacity-0');
-                }
-            });
-            if(indicator) {
-                indicator.innerText = `${currentSlide + 1} / ${slides.length}`;
-            }
+function updateCarousel() {
+    slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+            slide.classList.remove('opacity-0');
+            slide.classList.add('opacity-100');
+        } else {
+            slide.classList.remove('opacity-100');
+            slide.classList.add('opacity-0');
         }
+    });
+    if (slideIndicator) {
+        slideIndicator.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    }
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+}
 
         function nextSlide() {
             currentSlide = (currentSlide + 1) % slides.length;
