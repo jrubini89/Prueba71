@@ -339,7 +339,7 @@
         </section>
 
 
-        <!-- ========================================== -->
+<!-- ========================================== -->
         <!-- SECTION 3: FICHA TÉCNICA & CARRUSEL (SOBRE MÍ) -->
         <!-- ========================================== -->
         <section id="experiencia" class="space-y-12 scroll-mt-24">
@@ -352,9 +352,9 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                 
-                <!-- Left Column: Clipboard / Ficha Técnica (Based on user image) -->
-                <div class="lg:col-span-6 flex justify-center">
-                    <div class="clipboard-paper w-full max-w-md rounded-lg p-6 sm:p-8 space-y-6 text-asfalto border border-stone-300">
+                <!-- Left Column: Clipboard / Ficha Técnica & Carrusel -->
+                <div class="lg:col-span-6 flex justify-center w-full">
+                    <div class="clipboard-paper w-full max-w-md rounded-lg p-6 sm:p-8 space-y-6 text-asfalto border border-stone-300 relative">
                         <!-- Clip top element -->
                         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-stone-700 rounded border-2 border-stone-800 shadow flex items-center justify-center">
                             <div class="w-4 h-4 rounded-full bg-stone-900 border border-stone-500"></div>
@@ -376,10 +376,10 @@
                             <p><strong>Cable a tierra:</strong> ruta en mi clásico del 71</p>
                         </div>
 
-<!-- PHOTO CAROUSEL INSIDE THE CLIPBOARD -->
+                        <!-- PHOTO CAROUSEL INSIDE THE CLIPBOARD -->
                         <div class="pt-4 border-t-2 border-stone-300 space-y-3">
                             <div class="relative w-full h-64 rounded bg-stone-900 overflow-hidden shadow-inner group">
-                                <!-- Slides: SOLAMENTE LA PRIMERA EN OPACITY-100, EL RESTO EN OPACITY-0 -->
+                                <!-- Slides -->
                                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-100">
                                     <img src="CARRU4.jpg" alt="Julia Rubini" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/2a2a2a/FFD100?text=Julia+Rubini'">
                                 </div>
@@ -394,18 +394,22 @@
                                 </div>
 
                                 <!-- Carousel Controls -->
-                                <button onclick="prevSlide()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-2 rounded-full text-xs transition">
+                                <button onclick="prevSlide()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-2 rounded-full text-xs transition cursor-pointer z-10">
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </button>
-                                <button onclick="nextSlide()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-2 rounded-full text-xs transition">
+                                <button onclick="nextSlide()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-2 rounded-full text-xs transition cursor-pointer z-10">
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </button>
 
-                                <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/70 px-3 py-1 rounded text-[10px] text-carrera font-mono tracking-wider">
+                                <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/70 px-3 py-1 rounded text-[10px] text-carrera font-mono tracking-wider z-10">
                                     <span id="slide-indicator">1 / 4</span> • Archivo
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+                </div>
+                <!-- Cierre correcto de la columna izquierda -->
 
                 <!-- Right Column: Experience Timeline & Toolbox -->
                 <div class="lg:col-span-6 space-y-8">
@@ -438,9 +442,9 @@
                             <!-- Job 4 -->
                             <div class="border-l-2 border-pits pl-4 space-y-1 relative">
                                 <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-pits border-2 border-asfalto"></div>
-                                <span class="font-mono text-xs text-pits font-bold">13/2022 — 11/2022</span>
+                                <span class="font-mono text-xs text-pits font-bold">10/2022 — 11/2022</span>
                                 <h4 class="font-bebas text-2xl text-hueso tracking-wide">Zephia Digital : UX Designer Freelance</h4>
-                                <p class="text-sm text-cromo">Diseño de pantallas para pagina web e interfaz CRM, entrevista con usuarios, pruebas, UI Kits</p>
+                                <p class="text-sm text-cromo">Diseño de pantallas para página web e interfaz CRM, entrevista con usuarios, pruebas, UI Kits</p>
                             </div>
                         </div>
                     </div>
