@@ -129,12 +129,70 @@
       text-shadow: 2px 2px 4px #121212;
     }
 
+    /* ==========================================
+       MODAL / PANTALLA "SOBRE MÍ" (Pasos interactivos)
+       ========================================== */
+    .about-modal {
+      display: none; /* Oculto por defecto */
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #121212;
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-modal.active {
+      display: flex;
+    }
+
+    .about-step {
+      display: none;
+      width: 1440px;
+      height: 804px;
+      position: relative;
+      background: white;
+      overflow: hidden;
+    }
+
+    .about-step.active {
+      display: block;
+    }
+
+    /* Botón de cierre superior derecho para volver al inicio */
+    .close-modal-btn {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      background: #121212;
+      color: #F3ECDD;
+      border: 2px solid #FFD100;
+      width: 44px;
+      height: 44px;
+      font-size: 24px;
+      font-family: 'Bebas Neue', sans-serif;
+      cursor: pointer;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+      transition: background 0.15s;
+    }
+
+    .close-modal-btn:hover {
+      background: #FFD100;
+      color: #121212;
+    }
+
     .mobile-version {
       display: none;
     }
 
     /* ==========================================
-       VERSIÓN MÓVIL (Se activa en pantallas <= 768px)
+       VERSIÓN MÓVIL (Para pantallas <= 768px)
        ========================================== */
     @media (max-width: 768px) {
       .desktop-version {
@@ -240,7 +298,7 @@
     <img src="taller.jpg" alt="Mi Taller de UX - Fondo" class="hero-bg-img">
 
     <nav class="top-nav">
-      <a href="#sobre-mi" class="btn-garage">Sobre Mí</a>
+      <button id="btn-sobre-mi" class="btn-garage">Sobre Mí</button>
       <a href="#proyectos" class="btn-garage">Proyectos</a>
       <a href="#prototipos" class="btn-garage">Prototipos</a>
       <a href="#dis-grafico" class="btn-garage">Dis. Gráfico</a>
@@ -256,9 +314,71 @@
   </main>
 
 
+  <!-- ================= SECCIÓN INTERACTIVA "SOBRE MÍ" (3 PANTALLAS / STEPS) ================= -->
+  <div id="aboutModal" class="about-modal">
+    <button id="closeModal" class="close-modal-btn">✕</button>
+
+    <!-- PASO 1 -->
+    <div class="about-step active" id="step-1">
+      <img style="width: 1440px; height: 804px; left: 0px; top: 0px; position: absolute" src="taller.jpg" />
+      <div style="width: 610px; height: 346.18px; left: 350px; top: 4px; position: absolute; background: rgba(243, 236, 221, 0.85); border-radius: 12px;"></div>
+      <div style="width: 464.76px; height: 108px; left: 423px; top: 76px; position: absolute; text-align: center; color: black; font-size: 18px; font-family: Space Mono; font-weight: 400; word-wrap: break-word; z-index: 2;">¡Hola, soy Julia! <br/>Te doy la bienvenida a mi taller<br/>Diseño experiencias digitales claras y útiles. Pasá y te cuento un poco sobre mi</div>
+      
+      <!-- Botón Siguiente -->
+      <div onclick="nextStep(2)" style="width: 100px; height: 36.06px; left: 670px; top: 664.25px; position: absolute; cursor: pointer; z-index: 5;">
+        <div style="width: 100px; height: 36.06px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
+        <div style="width: 97.27px; height: 32.68px; left: 1.36px; top: 1.69px; position: absolute; background: #F3ECDD"></div>
+        <div style="width: 92.73px; height: 27.04px; left: 4px; top: 5px; position: absolute; background: #3E5C3A"></div>
+        <div style="width: 88.41px; height: 21.69px; left: 5.80px; top: 7.18px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
+        <div style="left: 25px; top: 7px; position: absolute; color: #F3ECDD; font-size: 16px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">siguiente</div>
+      </div>
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="about-step" id="step-2">
+      <img style="width: 1440px; height: 804px; left: 0px; top: 0px; position: absolute" src="taller.jpg" />
+      <div style="width: 610px; height: 346px; left: 350px; top: 4px; position: absolute; background: rgba(243, 236, 221, 0.85); border-radius: 12px;"></div>
+      <div style="width: 384px; height: 162px; left: 454px; top: 69px; position: absolute; text-align: center; color: black; font-size: 18px; font-family: Space Mono; font-weight: 400; word-wrap: break-word; z-index: 2;">Egresé de una técnica en mecánica y pasé por Diseño Industrial. Ahí descubrí que me gusta que las cosas funcionen y se vean bien. Hoy lo hago con experiencias digitales.</div>
+      
+      <!-- Botón Volver -->
+      <div onclick="nextStep(1)" style="width: 100px; height: 36.06px; left: 560px; top: 664.25px; position: absolute; cursor: pointer; z-index: 5;">
+        <div style="width: 100px; height: 36.06px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
+        <div style="width: 97.27px; height: 32.68px; left: 1.36px; top: 1.69px; position: absolute; background: #F3ECDD"></div>
+        <div style="width: 92.73px; height: 27.04px; left: 4px; top: 5px; position: absolute; background: #3E5C3A"></div>
+        <div style="width: 88.41px; height: 21.69px; left: 5.80px; top: 7.18px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
+        <div style="left: 31px; top: 7px; position: absolute; color: #F3ECDD; font-size: 16px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">volver</div>
+      </div>
+
+      <!-- Botón Siguiente -->
+      <div onclick="nextStep(3)" style="width: 100px; height: 36.06px; left: 670px; top: 664.25px; position: absolute; cursor: pointer; z-index: 5;">
+        <div style="width: 100px; height: 36.06px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
+        <div style="width: 97.27px; height: 32.68px; left: 1.36px; top: 1.69px; position: absolute; background: #F3ECDD"></div>
+        <div style="width: 92.73px; height: 27.04px; left: 4px; top: 5px; position: absolute; background: #3E5C3A"></div>
+        <div style="width: 88.41px; height: 21.69px; left: 5.80px; top: 7.18px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
+        <div style="left: 25px; top: 7px; position: absolute; color: #F3ECDD; font-size: 16px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">siguiente</div>
+      </div>
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="about-step" id="step-3">
+      <img style="width: 1440px; height: 804px; left: 0px; top: 0px; position: absolute" src="taller.jpg" />
+      <div style="width: 610px; height: 346px; left: 338px; top: 0px; position: absolute; background: rgba(243, 236, 221, 0.85); border-radius: 12px;"></div>
+      <div style="width: 384px; height: 162px; left: 451px; top: 62px; position: absolute; text-align: center; color: black; font-size: 18px; font-family: Space Mono; font-weight: 400; word-wrap: break-word; z-index: 2;">Lo mío es que lo complejo se sienta simple: pruebo, ajusto y vuelvo a probar, como en un taller. Por eso mi portfolio es uno. Entre prueba y prueba: buena música, autos clásicos y mate.</div>
+      
+      <!-- Botón Volver -->
+      <div onclick="nextStep(2)" style="width: 100px; height: 36.06px; left: 560px; top: 664.25px; position: absolute; cursor: pointer; z-index: 5;">
+        <div style="width: 100px; height: 36.06px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
+        <div style="width: 97.27px; height: 32.68px; left: 1.36px; top: 1.69px; position: absolute; background: #F3ECDD"></div>
+        <div style="width: 92.73px; height: 27.04px; left: 4px; top: 5px; position: absolute; background: #3E5C3A"></div>
+        <div style="width: 88.41px; height: 21.69px; left: 5.80px; top: 7.18px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
+        <div style="left: 31px; top: 7px; position: absolute; color: #F3ECDD; font-size: 16px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">volver</div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- ================= VISTA MÓVIL ================= -->
   <div class="mobile-version">
-    <!-- Botonera móvil organizada en cuadrícula -->
     <nav class="mobile-nav">
       <a href="#sobre-mi" class="btn-garage">Sobre Mí</a>
       <a href="#proyectos" class="btn-garage">Proyectos</a>
@@ -268,7 +388,6 @@
       <a href="CV_Julia_UX.pdf" target="_blank" class="btn-garage cv-btn">Descarga Mi CV</a>
     </nav>
 
-    <!-- Tarjeta visual con la imagen real del taller centrada en el personaje -->
     <div class="mobile-hero-card">
       <img src="taller.jpg" alt="Mi Taller de UX" class="mobile-bg-img">
       <div class="mobile-overlay"></div>
@@ -280,6 +399,32 @@
       </div>
     </div>
   </div>
+
+
+  <!-- ================= SCRIPT DE CONTROL INTERactivo ================= -->
+  <script>
+    const btnSobreMi = document.getElementById('btn-sobre-mi');
+    const aboutModal = document.getElementById('aboutModal');
+    const closeModal = document.getElementById('closeModal');
+    const steps = document.querySelectorAll('.about-step');
+
+    // Abrir sección Sobre Mí
+    btnSobreMi.addEventListener('click', () => {
+      aboutModal.classList.add('active');
+      nextStep(1); // Siempre arranca en el paso 1
+    });
+
+    // Cerrar sección Sobre Mí
+    closeModal.addEventListener('click', () => {
+      aboutModal.classList.remove('active');
+    });
+
+    // Función para cambiar de pantalla/paso
+    window.nextStep = function(stepNumber) {
+      steps.forEach(step => step.classList.remove('active'));
+      document.getElementById('step-' + stepNumber).classList.add('active');
+    };
+  </script>
 
 </body>
 </html>
