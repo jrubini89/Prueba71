@@ -144,24 +144,91 @@
       .mobile-version {
         display: flex !important;
         width: 100%;
-        min-height: 100vh;
+        min-height: 100dvh;
         background: #30312D;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px;
       }
 
-      /* Contenedor que respeta exactamente los 390px de Figma centrados */
-      .mobile-wrapper {
-        width: 390px;
-        min-height: 984px;
+      .mobile-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        width: 100%;
+        margin-bottom: 16px;
+      }
+
+      .mobile-nav .btn-garage {
+        font-size: 16px;
+        padding: 8px;
+      }
+
+      .mobile-nav .cv-btn {
+        grid-column: span 2;
+      }
+
+      .mobile-hero-card {
         position: relative;
-        background: #30312D;
+        width: 100%;
+        flex-grow: 1;
+        min-height: 450px;
+        border-radius: 12px;
         overflow: hidden;
+        border: 2px solid #232b20;
+        box-shadow: 4px 4px 0px #121212;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        justify-content: flex-end;
+      }
+
+      .mobile-bg-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 35% center;
+        z-index: 1;
+      }
+
+      .mobile-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(18,18,18,0.1) 40%, rgba(18,18,18,0.9) 90%);
+        z-index: 2;
+      }
+
+      .mobile-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        padding: 24px 16px;
+      }
+
+      .mobile-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 42px;
+        line-height: 1;
+        color: #F3ECDD;
+        text-shadow: 3px 3px 0px #121212;
+        margin-bottom: 6px;
+      }
+
+      .mobile-sub {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #F3ECDD;
+        margin-bottom: 4px;
+      }
+
+      .mobile-tag {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #ffd100;
       }
     }
   </style>
@@ -191,179 +258,28 @@
 
   <!-- ================= VISTA MÓVIL ================= -->
   <div class="mobile-version">
-    <div class="mobile-wrapper">
-      <img style="width: 2775px; height: 1549px; left: -1400px; top: -565px; position: absolute" src="taller.jpg" />
-      <div style="align-self: stretch; padding-top: 16px; padding-bottom: 24px; padding-left: 24px; padding-right: 24px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
-        <div style="align-self: stretch; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-          <div style="width: 166px; height: 48px; position: relative">
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 4.73px; position: absolute; background: black"></div>
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
-            <div style="width: 161.47px; height: 39.21px; left: 2.26px; top: 2.03px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 153.93px; height: 32.45px; left: 6.64px; top: 6px; position: absolute; background: #263B24"></div>
-            <div style="width: 146.76px; height: 26.03px; left: 9.62px; top: 8.62px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 14.71px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 15.85px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 146px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 147.14px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 78.47px; height: 22.99px; left: 45.27px; top: 8.79px; position: absolute; opacity: 0.28; outline: 1px #F3ECDD solid; outline-offset: -0.50px"></div>
-            <div style="left: 31.54px; top: 9.60px; position: absolute; color: #F3ECDD; font-size: 18px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">sobre mi</div>
-          </div>
-          <div style="width: 166px; height: 48px; position: relative">
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 4.73px; position: absolute; background: black"></div>
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
-            <div style="width: 161.47px; height: 39.21px; left: 2.26px; top: 2.03px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 153.93px; height: 32.45px; left: 6.64px; top: 6px; position: absolute; background: #263B24"></div>
-            <div style="width: 146.76px; height: 26.03px; left: 9.62px; top: 8.62px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 14.71px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 15.85px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 146px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 147.14px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 78.47px; height: 22.99px; left: 45.27px; top: 8.79px; position: absolute; opacity: 0.28; outline: 1px #F3ECDD solid; outline-offset: -0.50px"></div>
-            <div style="left: 31.54px; top: 9.60px; position: absolute; color: #F3ECDD; font-size: 18px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">proyectos</div>
-          </div>
-        </div>
-        <div style="align-self: stretch; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-          <div style="width: 166px; height: 48px; position: relative">
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 4.73px; position: absolute; background: black"></div>
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
-            <div style="width: 161.47px; height: 39.21px; left: 2.26px; top: 2.03px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 153.93px; height: 32.45px; left: 6.64px; top: 6px; position: absolute; background: #263B24"></div>
-            <div style="width: 146.76px; height: 26.03px; left: 9.96px; top: 8.62px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 14.71px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 15.85px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 146px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 147.14px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 78.47px; height: 22.99px; left: 45.27px; top: 8.79px; position: absolute; opacity: 0.28; outline: 1px #F3ECDD solid; outline-offset: -0.50px"></div>
-            <div style="left: 28.22px; top: 9.60px; position: absolute; color: #F3ECDD; font-size: 18px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">prototipos</div>
-          </div>
-          <div style="width: 166px; height: 48px; position: relative">
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 4.73px; position: absolute; background: black"></div>
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
-            <div style="width: 161.47px; height: 39.21px; left: 2.26px; top: 2.03px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 153.93px; height: 32.45px; left: 6.64px; top: 6px; position: absolute; background: #263B24"></div>
-            <div style="width: 146.76px; height: 26.03px; left: 9.96px; top: 8.62px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 14.71px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 15.85px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 146px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 147.14px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 78.47px; height: 22.99px; left: 45.27px; top: 8.79px; position: absolute; opacity: 0.28; outline: 1px #F3ECDD solid; outline-offset: -0.50px"></div>
-            <div style="left: 24.90px; top: 9.60px; position: absolute; color: #F3ECDD; font-size: 18px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">dis. grafico</div>
-          </div>
-        </div>
-        <div style="align-self: stretch; overflow: hidden; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
-          <div style="width: 166px; height: 48px; position: relative">
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 4.73px; position: absolute; background: black"></div>
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
-            <div style="width: 161.47px; height: 39.21px; left: 2.26px; top: 2.03px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 153.93px; height: 32.45px; left: 6.64px; top: 6px; position: absolute; background: #263B24"></div>
-            <div style="width: 146.76px; height: 26.03px; left: 9.96px; top: 8.62px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 14.71px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 15.85px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 146px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 147.14px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 78.47px; height: 22.99px; left: 45.27px; top: 8.79px; position: absolute; opacity: 0.28; outline: 1px #F3ECDD solid; outline-offset: -0.50px"></div>
-            <div style="left: 36.52px; top: 9.60px; position: absolute; color: #F3ECDD; font-size: 18px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">contacto</div>
-          </div>
-          <div style="width: 166px; height: 48px; position: relative">
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 4.73px; position: absolute; background: black"></div>
-            <div style="width: 166px; height: 43.27px; left: 0px; top: 0px; position: absolute; background: #121212"></div>
-            <div style="width: 161.47px; height: 39.21px; left: 2.26px; top: 2.03px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 153.93px; height: 32.45px; left: 6.64px; top: 6px; position: absolute; background: #263B24"></div>
-            <div style="width: 146.76px; height: 26.03px; left: 9.96px; top: 8.62px; position: absolute; outline: 1.50px #FFD100 solid; outline-offset: -0.75px"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 14.71px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 15.85px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 5.28px; height: 4.73px; left: 146px; top: 19.27px; position: absolute; background: #B9BDC3; outline: 1px #121212 solid; outline-offset: -0.50px"></div>
-            <div style="width: 1.51px; height: 1.35px; left: 147.14px; top: 20.28px; position: absolute; background: #F3ECDD"></div>
-            <div style="width: 78.47px; height: 22.99px; left: 45.27px; top: 8.79px; position: absolute; opacity: 0.28; outline: 1px #F3ECDD solid; outline-offset: -0.50px"></div>
-            <div style="left: 18.26px; top: 10.80px; position: absolute; color: #F3ECDD; font-size: 16px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Descarga mi cv</div>
-          </div>
-        </div>
+    <!-- Botonera móvil organizada en cuadrícula -->
+    <nav class="mobile-nav">
+      <a href="#sobre-mi" class="btn-garage">Sobre Mí</a>
+      <a href="#proyectos" class="btn-garage">Proyectos</a>
+      <a href="#prototipos" class="btn-garage">Prototipos</a>
+      <a href="#dis-grafico" class="btn-garage">Dis. Gráfico</a>
+      <a href="#contacto" class="btn-garage">Contacto</a>
+      <a href="CV_Julia_UX.pdf" target="_blank" class="btn-garage cv-btn">Descarga Mi CV</a>
+    </nav>
+
+    <!-- Tarjeta visual con la imagen real del taller centrada en el personaje -->
+    <div class="mobile-hero-card">
+      <img src="taller.jpg" alt="Mi Taller de UX" class="mobile-bg-img">
+      <div class="mobile-overlay"></div>
+      
+      <div class="mobile-content">
+        <h1 class="mobile-title">HOLA, SOY JULIA</h1>
+        <p class="mobile-sub">Diseño experiencias digitales claras, útiles y con impacto real</p>
+        <p class="mobile-tag">Adelante, este es mi taller...</p>
       </div>
-      <div style="align-self: stretch; height: 642px; position: relative; overflow: hidden">
-        <img style="width: 1008px; height: 562.80px; left: -50px; top: 5px; position: absolute" src="taller.jpg" />
-        <div style="width: 390px; height: 162px; left: 0px; top: 480px; position: absolute; background: linear-gradient(180deg, rgba(48, 49, 45, 0) 0%, #30312D 52%, rgba(48, 49, 45, 0) 100%)"></div>
-        <div style="width: 323px; left: 61px; top: 67px; position: absolute; transform: rotate(10deg); transform-origin: top left; color: #F3ECDD; font-size: 52px; font-family: Bebas Neue; font-weight: 400; word-wrap: break-word; text-shadow: 0px 4px 10px rgba(255, 209, 0, 0.25)">MI TALLER DE UX</div>
-        <img style="width: 494px; height: 365px; left: 104px; top: 136px; position: absolute" src="taller.jpg" />
-        <div style="width: 175px; height: 469.60px; left: 6px; top: 179px; position: absolute; overflow: hidden">
-          <div style="width: 175px; height: 469.60px; left: 0px; top: 0px; position: absolute; overflow: hidden">
-            <!-- (Elementos vectoriales de personaje integrados de Figma) -->
-            <div style="width: 146.74px; height: 431px; left: 9.05px; top: 26.72px; position: absolute; background: #5B8C54"></div>
-            <div style="width: 122.38px; height: 402.49px; left: 9.05px; top: 26.72px; position: absolute; background: #010101"></div>
-            <div style="width: 55.02px; height: 70.39px; left: 52.01px; top: 26.72px; position: absolute; background: #E1AE8B"></div>
-            <div style="width: 55.02px; height: 32.03px; left: 52.01px; top: 26.72px; position: absolute; background: #4F524E"></div>
-            <div style="width: 15.54px; height: 26.58px; left: 52.01px; top: 32.17px; position: absolute; background: #3F413E"></div>
-            <div style="width: 10.22px; height: 26.58px; left: 52.01px; top: 32.17px; position: absolute; background: #3B3C3A"></div>
-            <div style="width: 4.76px; height: 20.94px; left: 52.01px; top: 37.80px; position: absolute; background: #221F1B"></div>
-            <div style="width: 7.33px; height: 10.94px; left: 54.90px; top: 32.17px; position: absolute; background: #403931"></div>
-            <div style="width: 2.56px; height: 3.71px; left: 57.10px; top: 41.56px; position: absolute; background: #3D3E39"></div>
-            <div style="width: 7.05px; height: 8.03px; left: 58.24px; top: 46.91px; position: absolute; background: #757875"></div>
-            <div style="width: 2.10px; height: 1.17px; left: 59.38px; top: 52.78px; position: absolute; background: #3D3E39"></div>
-            <div style="width: 2.57px; height: 8.12px; left: 55.54px; top: 46.91px; position: absolute; background: #625E57"></div>
-            <div style="width: 4.81px; height: 4.41px; left: 56.26px; top: 53.96px; position: absolute; background: #625E57"></div>
-            <div style="width: 2.10px; height: 1.17px; left: 56.26px; top: 57.15px; position: absolute; background: #A1A19A"></div>
-            <div style="width: 3.08px; height: 7.65px; left: 55px; top: 49.92px; position: absolute; background: #757875"></div>
-            <div style="width: 1.72px; height: 2.44px; left: 58.19px; top: 43.11px; position: absolute; background: #403931"></div>
-            <div style="width: 1.28px; height: 2.21px; left: 57.10px; top: 44.47px; position: absolute; background: #221F1B"></div>
-            <div style="width: 0.84px; height: 1.93px; left: 64.98px; top: 44.89px; position: absolute; background: #625E57"></div>
-            <div style="width: 12.55px; height: 10.38px; left: 86.13px; top: 36.91px; position: absolute; background: #757875"></div>
-            <div style="width: 13.70px; height: 7.80px; left: 59.59px; top: 39.16px; position: absolute; background: #878984"></div>
-            <div style="width: 6.63px; height: 18.88px; left: 100.40px; top: 37.80px; position: absolute; background: #010101"></div>
-            <div style="width: 5.86px; height: 11.22px; left: 100.40px; top: 37.80px; position: absolute; background: #3D3E39"></div>
-            <div style="width: 11.60px; height: 5.59px; left: 83.58px; top: 28.65px; position: absolute; background: #A1A19A"></div>
-            <div style="width: 8.57px; height: 4.27px; left: 86.61px; top: 28.65px; position: absolute; background: #828280"></div>
-            <div style="width: 6.51px; height: 2.02px; left: 86.61px; top: 30.90px; position: absolute; background: #878984"></div>
-            <div style="width: 4.57px; height: 2.16px; left: 84.86px; top: 28.65px; position: absolute; background: #878984"></div>
-            <div style="width: 2px; height: 2.44px; left: 83.72px; top: 29.44px; position: absolute; background: #625E57"></div>
-            <div style="width: 2.08px; height: 1.31px; left: 86.61px; top: 32.50px; position: absolute; background: #625E57"></div>
-            <div style="width: 9.56px; height: 6.67px; left: 63.37px; top: 28.97px; position: absolute; background: #828280"></div>
-            <div style="width: 5.06px; height: 3.15px; left: 66.22px; top: 28.97px; position: absolute; background: #757875"></div>
-            <div style="width: 19.72px; height: 14.60px; left: 84.28px; top: 27px; position: absolute; background: #13110F"></div>
-            <div style="width: 17.03px; height: 5.49px; left: 60.50px; top: 26.72px; position: absolute; background: #010101"></div>
-            <div style="width: 1.92px; height: 3.24px; left: 101.41px; top: 48.93px; position: absolute; background: #A1A19A"></div>
-            <div style="width: 2.05px; height: 2.35px; left: 57.92px; top: 39.16px; position: absolute; background: #878984"></div>
-            <div style="width: 2.05px; height: 3.71px; left: 99.80px; top: 38.88px; position: absolute; background: #878984"></div>
-            <div style="width: 1.63px; height: 1.50px; left: 98.74px; top: 50.34px; position: absolute; background: #625E57"></div>
-            <div style="width: 8.84px; height: 12.16px; left: 75.02px; top: 30.71px; position: absolute; background: #878984"></div>
-            <div style="width: 3.10px; height: 2.91px; left: 95.51px; top: 34.80px; position: absolute; background: #828280"></div>
-            <div style="width: 2.89px; height: 2.82px; left: 93.82px; top: 32.45px; position: absolute; background: #A1A19A"></div>
-            <div style="width: 3.05px; height: 2.54px; left: 60.38px; top: 35.83px; position: absolute; background: #A1A19A"></div>
-            <div style="width: 1.45px; height: 3.71px; left: 100px; top: 45.08px; position: absolute; background: #A1A19A"></div>
-            <div style="width: 2.17px; height: 1.27px; left: 78.45px; top: 27.85px; position: absolute; background: #CAC9BC"></div>
-            <div style="width: 51.75px; height: 35.60px; left: 53.92px; top: 43.25px; position: absolute; background: #401C15"></div>
-            <div style="width: 26.84px; height: 30.10px; left: 57.61px; top: 44.10px; position: absolute; background: #873F20"></div>
-            <div style="width: 1.47px; height: 1.17px; left: 70.05px; top: 48.84px; position: absolute; background: #89462B"></div>
-            <div style="width: 7.45px; height: 22.92px; left: 98.21px; top: 55.04px; position: absolute; background: #625E57"></div>
-            <div style="width: 4.69px; height: 20.43px; left: 98.21px; top: 57.53px; position: absolute; background: #401C15"></div>
-            <div style="width: 3.26px; height: 12.21px; left: 98.21px; top: 57.53px; position: absolute; background: #592718"></div>
-            <div style="width: 0.91px; height: 6.29px; left: 100.55px; top: 63.44px; position: absolute; background: #643624"></div>
-            <div style="width: 3.20px; height: 10.66px; left: 99.70px; top: 67.29px; position: absolute; background: #BD8F79"></div>
-            <div style="width: 2.89px; height: 19.35px; left: 102.78px; top: 55.04px; position: absolute; background: #221F1B"></div>
-            <div style="width: 1.50px; height: 6.86px; left: 101.25px; top: 61.85px; position: absolute; background: #13110F"></div>
-            <div style="width: 5.14px; height: 12.73px; left: 53.92px; top: 57.48px; position: absolute; background: #625E57"></div>
-            <div style="width: 2.54px; height: 11.46px; left: 53.92px; top: 57.48px; position: absolute; background: #080D07"></div>
-            <div style="width: 2.99px; height: 2.35px; left: 56.07px; top: 57.85px; position: absolute; background: #4F524E"></div>
-            <div style="width: 9.48px; height: 12.49px; left: 89.92px; top: 46.21px; position: absolute; background: #89462B"></div>
-            <div style="width: 9.40px; height: 10.85px; left: 78.03px; top: 44.10px; position: absolute; background: #89462B"></div>
-            <div style="width: 3.69px; height: 11.93px; left: 57.37px; top: 66.92px; position: absolute; background: #BA876F"></div>
-            <div style="width: 2.05px; height: 5.87px; left: 101.96px; top: 51.98px; position: absolute; background: #828280"></div>
-            <div style="width: 2.45px; height: 3.38px; left: 79.94px; top: 47.76px; position: absolute; background: #8F7058"></div>
-            <div style="width: 11.52px; height: 35.83px; left: 60.88px; top: 57.24px; position: absolute; background: #BA876F"></div>
-            <div style="width: 17.97px; height: 7.56px; left: 72.64px; top: 83.31px; position: absolute; background: #BA876F"></div>
-            <div style="width: 17.97px; height: 2.91px; left: 72.64px; top: 83.31px; position: absolute; background: #592718"></div>
-            <div style="width: 10.47px; height: 1.93px; left: 73.96px; top: 83.35px; position: absolute; background: #8F7058"></div>
-            <div style="width: 4.97px; height: 2.11px; left: 78.43px; top: 88.75px; position: absolute; background: #BA876F"></div>
-            <div style="width: 5.28px; height: 1.17px; left: 78.21px; top: 88.14px; position: absolute; background: #592718"></div>
-            <div style="width: 2.94px; height: 2.02px; left: 83.41px; top: 86.59px; position: absolute; background: #89462B"></div>
-            <div style="width: 11.69px; height: 6.95px; left: 63.54px; top: 62.22px; position: absolute; background: #010101"></div>
-            <div style="width: 9.89px; height: 3.38px; left: 65.28px; top: 62.22px; position: absolute; background: #8F7058"></div>
-            <div style="width: 6.16px; height: 3.71px; left: 69.07px; top: 65.04px; position: absolute; background: #403931"></div>
-            <div style="width: 2.94px; height: 2.11px; left: 71.84px; top: 65.88px; position: absolute; background: #D7BDA6"></div>
-            <div style="width: 4.93px; height: 3.71px; left: 65.54px; top: 65.46px; position: absolute; background: #D7BDA6"></div>
-            <div style="width: 3.88px; height: 2.96px; left: 65.54px; top: 66.17px; position: absolute; background: #401C15"></div>
-            <div style="width: 1.78px; height: 2.77px; left: 69.14px; top: 64.90px; position: absolute; background: #878984"></div>
-            <div style="width: 12.67px; height: 7.18px; left: 84.05px; top: 62.32px; position: absolute; background: #010101"></div>
-            <div style="width: 12.67px; height: 7.18px; left: 84.05px; top: 62.32px; position: absolute; background: #BA967B"></div>
-            <div style="width: 7.21px; height: 2.21px; left: 85.03px; top: 62.32px; position: absolute; background: #7F6551"></div>
-            <div style="width: 2.20px; height: 2.63px; left: 85.19px; top: 65.04px; position: absolute; background: #221F1B"></div>
-            <div style="width: 6.97px; height: 3.33px; left: 87.87px; top: 64.95px; position: absolute; background: #080D07"></div>
-            <div style
+    </div>
+  </div>
+
+</body>
+</html>
