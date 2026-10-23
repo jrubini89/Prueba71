@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-839NQZ875K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-839NQZ875K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-839NQZ875K');
-</script>
+      gtag('config', 'G-839NQZ875K');
+    </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -470,84 +469,101 @@
             </div>
         </section>
 
-        <!-- SECTION: CINTA EN MOVIMIENTO -->
-        <section class="py-16 overflow-hidden bg-asfaltoCard border-y-2 border-carrera/20 relative">
+        <!-- SECTION: CINTA EN MOVIMIENTO (INTERACTIVA E INFINITA) -->
+        <section class="py-16 overflow-hidden bg-asfaltoCard border-y-2 border-carrera/20 relative select-none">
             <div class="max-w-7xl mx-auto px-4 sm:px-8 mb-8 text-center">
                 <span class="text-carrera font-mono text-xs uppercase tracking-widest block mb-1" data-i18n="marquee_sub">// LABORATORIO VISUAL & TALLER DE PINTURA</span>
                 <h3 class="font-bebas text-3xl sm:text-5xl text-hueso tracking-wider" data-i18n="marquee_title">BRANDING DE MARCA Y REDES</h3>
+                <p class="text-xs font-mono text-cromo mt-2" data-i18n="marquee_hint">💡 Tip: Arrastrá hacia los lados para mover a voluntad o hacé clic para inspeccionar.</p>
             </div>
 
-            <div class="transform -rotate-2 scale-105 py-4 bg-asfalto/50 border-y border-carrera/30">
-                <div class="flex w-max animate-marquee space-x-6 hover:[animation-play-state:paused]">
+            <!-- Contenedor con soporte de arrastre manual -->
+            <div class="transform -rotate-2 scale-105 py-4 bg-asfalto/50 border-y border-carrera/30 overflow-x-auto scrollbar-none cursor-grab active:cursor-grabbing" id="marquee-container" style="scrollbar-width: none; -ms-overflow-style: none;">
+                <div class="flex w-max space-x-6 animate-marquee hover:[animation-play-state:paused]" id="marquee-track">
                     <!-- Grupo 1 -->
                     <div class="flex space-x-6 shrink-0">
-                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
-                            <img src="BRANDING 4.png" alt="Branding Alqo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                        <!-- Tarjeta 1 -->
+                        <div onclick="openBrandingModal('branding1')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 4.png" alt="Branding Alqo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
                                 <span class="text-[10px] font-mono text-carrera font-bold">BRANDING // IDENTIDAD VISUAL</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide" data-i18n="b1_name">Alqo Brand System</h4>
                             </div>
                         </div>
-                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105">
-                            <img src="BRANDING 5.png" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                        <!-- Tarjeta 2 -->
+                        <div onclick="openBrandingModal('branding2')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 5.png" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
                                 <span class="text-[10px] font-mono text-falcon font-bold">UI/UX // FIGMA PROTOTYPE</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide" data-i18n="b2_name">Figma Design System</h4>
                             </div>
                         </div>
-                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105">
-                            <img src="BRANDING 1.png" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                        <!-- Tarjeta 3 -->
+                        <div onclick="openBrandingModal('branding3')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 1.png" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                                <span class="text-[10px] font-mono text-pits font-bold">Adobe Illustrator</span>
+                                <span class="text-[10px] font-mono text-pits font-bold">ADOBE ILLUSTRATOR</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide" data-i18n="b3_name">Diseño gráfico</h4>
                             </div>
                         </div>
-                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
-                            <img src="BRANDING 2.png" alt="Ilustración Vectorial" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                        <!-- Tarjeta 4 -->
+                        <div onclick="openBrandingModal('branding4')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 2.png" alt="Ilustración Vectorial" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                                <span class="text-[10px] font-mono text-carrera font-bold">ILUSTRACIÓN // VECTORIAL</span>
+                                <span class="text-[10px] font-mono text-carrera font-bold">PROPUESTA COMERCIAL</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide" data-i18n="b4_name">UX/UI</h4>
+                            </div>
+                        </div>  
+                         <!-- Tarjeta 5 -->
+                        <div onclick="openBrandingModal('branding5')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 3.png" alt="Manual de marca" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-carrera font-bold">MANUAL DE MARCA // BRANDING</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide">Diseño Grafico</h4>
                             </div>
                         </div>
                     </div>
-                    <!-- Grupo 2 (Duplicado) -->
+                    <!-- Grupo 2 (Duplicado exacto para continuidad fluida) -->
                     <div class="flex space-x-6 shrink-0" aria-hidden="true">
-                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
-                            <img src="BRANDING 3.png" alt="Branding Taller" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                        <div onclick="openBrandingModal('branding1')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 4.png" alt="Branding Alqo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
                                 <span class="text-[10px] font-mono text-carrera font-bold">BRANDING // IDENTIDAD VISUAL</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide" data-i18n="b1_name">Alqo Brand System</h4>
                             </div>
                         </div>
-                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105">
-                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=600" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                        <div onclick="openBrandingModal('branding2')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-falcon hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 5.png" alt="Prototipo Figma" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
                                 <span class="text-[10px] font-mono text-falcon font-bold">UI/UX // FIGMA PROTOTYPE</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide" data-i18n="b2_name">Figma Design System</h4>
                             </div>
                         </div>
-                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105">
-                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                        <div onclick="openBrandingModal('branding3')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-pits hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 1.png" alt="Botmaker Flow" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                                <span class="text-[10px] font-mono text-pits font-bold">BOTMAKER // GEN AI & MCP</span>
+                                <span class="text-[10px] font-mono text-pits font-bold">ADOBE ILLUSTRATOR</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide" data-i18n="b3_name">Diseño gráfico</h4>
                             </div>
                         </div>
-                        <div class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105">
-                            <img src="BRANDING 5.png" alt="Ilustración Vectorial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div onclick="openBrandingModal('branding4')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 2.png" alt="Ilustración Vectorial" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
                             <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
-                                <span class="text-[10px] font-mono text-carrera font-bold">ILUSTRACIÓN // VECTORIAL</span>
+                                <span class="text-[10px] font-mono text-carrera font-bold">PROPUESTA COMERCIAL</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide" data-i18n="b4_name">UX/UI</h4>
+                            </div>
+                        </div>
+                        <div onclick="openBrandingModal('branding5')" class="w-80 h-48 bg-asfalto border-2 border-cromo/30 rounded-xl overflow-hidden relative group shadow-xl transition duration-300 hover:border-carrera hover:scale-105 cursor-pointer">
+                            <img src="BRANDING 3.png" alt="Manual de marca" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 pointer-events-none">
+                            <div class="absolute inset-0 bg-gradient-to-t from-asfalto via-asfalto/40 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-[10px] font-mono text-carrera font-bold">MANUAL DE MARCA // BRANDING</span>
+                                <h4 class="font-bebas text-xl text-hueso tracking-wide">Diseño Grafico</h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <style>
-            @keyframes marquee {
-                0% { transform: translateX(0%); }
-                100% { transform: translateX(-50%); }
-            }
-            .animate-marquee {
-                display: flex;
-                width: max-content;
-                animation: marquee 25s linear infinite;
-            }
-        </style>
         
         <!-- SECTION: BANCO DE PROTOTIPOS & MOCKUPS MÓVILES -->
         <section class="py-20 max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
@@ -694,16 +710,6 @@
                                     <a href="https://linkedin.com/in/juliarubini" target="_blank" class="text-hueso hover:text-falcon font-bold">linkedin.com/in/juliarubini</a>
                                 </div>
                             </div>
-
-                            <div class="flex items-center gap-4 bg-asfalto p-4 rounded border border-asfaltoLight">
-                                <div class="bg-pits text-hueso p-3 rounded">
-                                    <i class="fa-solid fa-globe text-lg"></i>
-                                </div>
-                                <div>
-                                    <span class="text-xs text-cromo block" data-i18n="coord_portfolio">PORTFOLIO ALTERNATIVO</span>
-                                    <a href="https://squirrel-xq9rsg.my.canva.site/jrubini" target="_blank" class="text-hueso hover:text-pits font-bold">Canva / jrubini</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -766,6 +772,29 @@
             <div class="pt-4 border-t border-asfaltoLight flex justify-end">
                 <button onclick="closeModal()" class="bg-carrera hover:bg-hueso text-asfalto font-mono text-xs px-6 py-2.5 rounded font-bold uppercase transition" data-i18n="modal_close">
                     CERRAR INFORME
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL ESPECÍFICO PARA LOS PROYECTOS DE LA CINTA -->
+    <div id="branding-modal" class="fixed inset-0 bg-asfalto/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-asfaltoCard border-2 border-carrera rounded-xl max-w-lg w-full p-6 sm:p-8 space-y-6 relative shadow-2xl">
+            <button onclick="closeBrandingModal()" class="absolute top-4 right-4 text-cromo hover:text-carrera text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-2 text-carrera font-mono text-xs uppercase">
+                <i class="fa-solid fa-palette"></i> <span data-i18n="bm_subtitle">INFORME DE LABORATORIO VISUAL</span>
+            </div>
+            <h3 id="bm-title" class="font-bebas text-3xl text-hueso tracking-wider">Título del Proyecto</h3>
+            <p id="bm-desc" class="text-sm font-sans text-cromo leading-relaxed">Descripción detallada...</p>
+            
+            <div class="pt-4 border-t border-asfaltoLight flex flex-col sm:flex-row gap-3 justify-between items-center">
+                <a id="bm-behance-btn" href="#" target="_blank" class="w-full sm:w-auto bg-carrera hover:bg-hueso text-asfalto font-mono text-xs px-6 py-3 rounded font-bold uppercase transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-behance"></i> <span data-i18n="bm_behance">VER EN BEHANCE</span>
+                </a>
+                <button onclick="closeBrandingModal()" class="w-full sm:w-auto bg-asfaltoLight hover:bg-asfalto text-hueso font-mono text-xs px-6 py-3 rounded font-bold uppercase transition border border-cromo/30">
+                    <span data-i18n="bm_close">CERRAR</span>
                 </button>
             </div>
         </div>
@@ -1146,7 +1175,7 @@
 
         // Modal Management
         function openModal(title, desc, tools, results) {
-            document.getElementById('modal-titleinnerText' in document.getElementById('modal-title') ? 'modal-title' : 'modal-title').innerText = title;
+            document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-desc').innerText = desc;
             document.getElementById('modal-tools').innerText = tools;
             document.getElementById('modal-results').innerText = results;
@@ -1157,6 +1186,129 @@
             document.getElementById('case-modal').classList.add('hidden');
         }
 
+        // --- LÓGICA DE LA CINTA INTERACTIVA (DRAG TO SCROLL & PAUSE) ---
+        const marqueeContainer = document.getElementById('marquee-container');
+        const marqueeTrack = document.getElementById('marquee-track');
+        let isDragging = false;
+        let startPosX;
+        let scrollPosLeft;
+
+        marqueeContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            marqueeTrack.classList.add('paused-marquee');
+            startPosX = e.pageX - marqueeContainer.offsetLeft;
+            scrollPosLeft = marqueeContainer.scrollLeft;
+        });
+
+        marqueeContainer.addEventListener('mouseleave', () => {
+            isDragging = false;
+            marqueeTrack.classList.remove('paused-marquee');
+        });
+
+        marqueeContainer.addEventListener('mouseup', () => {
+            isDragging = false;
+            marqueeTrack.classList.remove('paused-marquee');
+        });
+
+        marqueeContainer.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - marqueeContainer.offsetLeft;
+            const walk = (x - startPosX) * 2;
+            marqueeContainer.scrollLeft = scrollPosLeft - walk;
+        });
+
+        // Soporte táctil para celulares
+        marqueeContainer.addEventListener('touchstart', (e) => {
+            marqueeTrack.classList.add('paused-marquee');
+            startPosX = e.touches[0].pageX - marqueeContainer.offsetLeft;
+            scrollPosLeft = marqueeContainer.scrollLeft;
+        });
+
+        marqueeContainer.addEventListener('touchend', () => {
+            marqueeTrack.classList.remove('paused-marquee');
+        });
+
+        marqueeContainer.addEventListener('touchmove', (e) => {
+            const x = e.touches[0].pageX - marqueeContainer.offsetLeft;
+            const walk = (x - startPosX) * 2;
+            marqueeContainer.scrollLeft = scrollPosLeft - walk;
+        });
+
+
+        // --- MODAL DE BRANDING & BEHANCE ---
+        const brandingDetails = {
+            es: {
+                branding1: {
+                    title: "Alqo Brand System",
+                    desc: "Sistema de identidad visual completo desarrollado para Alqo. Incluye definición de guías de marca, tipografías, paleta cromática y adaptaciones multiplataforma orientadas a un producto moderno.",
+                    url: "https://www.behance.net/gallery/129279967/Entrega-Final-ALQO"
+                },
+                branding2: {
+                    title: "Propuesta re-diseño app",
+                    desc: "Rediseño de la app mobile de una cadena global de comida rápida: flujo de pedido más ágil, navegación intuitiva y una interfaz visual renovada para mejorar la experiencia y la usabilidad.",
+                    url: "https://www.behance.net/gallery/133151905/Rediseno-App-Mobile-McDonalds"
+                },
+                branding3: {
+                    title: "Diseño Gráfico Empresas",
+                    desc: "Diseño de tarjeta de presentación para una empresa de servicios de Buenos Aires: una pieza clara y profesional que refuerza la identidad de marca y transmite confianza desde el primer contacto.",
+                    url: "https://www.behance.net/gallery/155921497/Tarjeta-presentacion-empresa-Service-Buenos-Aires"
+                },
+                branding4: {
+                    title: "Propuesta Comercial",
+                    desc: "Propuesta comercial de rediseño de la app mobile de una cadena internacional de comida rápida: mejora de la experiencia de pedido, navegación más simple y una interfaz moderna orientada a conversión.",
+                    url: "https://www.behance.net/gallery/130474331/Propuesta-Comercial-Rediseno-App-Mobile-Mc-Donalds"
+                },
+                branding5: {
+                    title: "Manual de Marca",
+                    desc: "Manual de marca para ALQO: define el uso del logotipo, la paleta de colores, la tipografía y las reglas de aplicación para mantener una identidad visual coherente y profesional en todos los canales.",
+                    url: "https://www.behance.net/gallery/128140091/Manual-de-marca-ALQO"
+                }
+            },
+            en: {
+                branding1: {
+                    title: "Alqo Brand System",
+                    desc: "Complete visual identity system developed for Alqo. Includes brand guidelines definition, typography, color palette, and multi-platform adaptations tailored for a modern product.",
+                    url: "https://www.behance.net/gallery/129279967/Entrega-Final-ALQO"
+                },
+                branding2: {
+                    title: "App Redesign Proposal",
+                    desc: "Mobile app redesign for a global fast-food chain: smoother ordering flow, intuitive navigation, and a refreshed visual interface to enhance experience and usability.",
+                    url: "https://www.behance.net/gallery/133151905/Rediseno-App-Mobile-McDonalds"
+                },
+                branding3: {
+                    title: "Corporate Graphic Design",
+                    desc: "Business card design for a Buenos Aires service company: a clear and professional piece that reinforces brand identity and builds trust from first contact.",
+                    url: "https://www.behance.net/gallery/155921497/Tarjeta-presentacion-empresa-Service-Buenos-Aires"
+                },
+                branding4: {
+                    title: "Commercial Proposal",
+                    desc: "Commercial proposal for a fast-food chain mobile app redesign: improving ordering experience, simpler navigation, and a modern conversion-oriented interface.",
+                    url: "https://www.behance.net/gallery/130474331/Propuesta-Comercial-Rediseno-App-Mobile-Mc-Donalds"
+                },
+                branding5: {
+                    title: "Brand Manual",
+                    desc: "Brand guidelines manual for ALQO: defines logo usage, color palette, typography, and application rules to maintain a coherent and professional visual identity across all channels.",
+                    url: "https://www.behance.net/gallery/128140091/Manual-de-marca-ALQO"
+                }
+            }
+        };
+
+        function openBrandingModal(key) {
+            const data = brandingDetails[currentLang][key];
+            if (!data) return;
+            
+            document.getElementById('bm-title').innerText = data.title;
+            document.getElementById('bm-desc').innerText = data.desc;
+            document.getElementById('bm-behance-btn').href = data.url;
+            
+            document.getElementById('branding-modal').classList.remove('hidden');
+        }
+
+        function closeBrandingModal() {
+            document.getElementById('branding-modal').classList.add('hidden');
+        }
+        
         // --- PHOTO CAROUSEL LOGIC ---
         let currentSlide = 0;
 
@@ -1276,10 +1428,26 @@
         };
     </script>
 
-<!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
-<button id="back-to-top" onclick="scrollToTop()" class="fixed bottom-6 right-6 z-40 bg-carrera hover:bg-hueso text-asfalto px-4 py-3 rounded-full font-mono text-xs font-bold uppercase shadow-2xl flex items-center gap-2 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none border-2 border-asfalto">
-    <i class="fa-solid fa-arrow-up text-sm"></i>
-    <span class="hidden sm:inline" data-i18n="back_to_top">Volver arriba</span>
-</button>
+    <!-- ESTILOS DE LA CINTA -->
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+        .paused-marquee {
+            animation-play-state: paused !important;
+        }
+    </style>
+
+    <!-- BOTÓN FLOTANTE "VOLVER ARRIBA" -->
+    <button id="back-to-top" onclick="scrollToTop()" class="fixed bottom-6 right-6 z-40 bg-carrera hover:bg-hueso text-asfalto px-4 py-3 rounded-full font-mono text-xs font-bold uppercase shadow-2xl flex items-center gap-2 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none border-2 border-asfalto">
+        <i class="fa-solid fa-arrow-up text-sm"></i>
+        <span class="hidden sm:inline" data-i18n="back_to_top">Volver arriba</span>
+    </button>
 </body>
 </html>
